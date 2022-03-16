@@ -1,0 +1,17 @@
+.Home{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+section {
+    padding: var(--spacing-2) 9%;
+}
+
+.products-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap:var(--spacing-1-5);
+    width: 100%;
+    cursor: pointer;
+}

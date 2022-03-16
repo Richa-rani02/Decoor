@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap');
 
 html, body {
     height: 100%;
@@ -12,6 +12,7 @@ html {
     font-size: 62.5%;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    transition: all .2s linear;
 }
 
 body {
@@ -130,6 +131,8 @@ a {
     font-size: 3.5rem;
     position: relative;
     color: var(--text-primary-color);
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
 }
 .heading-3{
     padding-bottom: var(--spacing-1-3);
@@ -148,6 +151,15 @@ hr {
 .left-text{
     text-align: start;
 }
+.small-text{
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+.grey-text{
+    color:var(--light-color)
+}
+
+
 /* media queries  */
 
 @media (max-width:990px) {
@@ -174,7 +186,7 @@ hr {
     }
 
     .header .search-form {
-        width: 90%;
+        width: 80%;
     }
 
     .header .navbar {
