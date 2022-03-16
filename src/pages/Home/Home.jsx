@@ -1,5 +1,5 @@
 import "./Home.css";
-import {Navbar,Product,Footer} from "../../components/index";
+import {Product,Footer} from "../../components/index";
 import {Hero} from "./HeroSection/Hero";
 import {CategoryList} from "./CategoryList/CategoryList";
 import { useStateContext } from "../../context/stateContext";
@@ -10,7 +10,6 @@ const Home = () => {
     console.log(products);
     return (
         <div className="Home">
-            <Navbar />
             <Hero/>
             <CategoryList/>
             <section className="products" id="products">
