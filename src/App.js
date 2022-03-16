@@ -1,20 +1,20 @@
 import "./App.css";
-import {BrowserRouter as Router, Route,Routes} from "react-router-dom";
-
+import {Route,Routes} from "react-router-dom";
+import {Home} from "./pages/Home/Home";
+import Mockman from "mockman-js";
 function App() {
   return (
-    <Router>
     <div>
-      <nav>
-        <Link to="/home">Home</Link>
-        <Link to="/cart">Cart</Link>
-      </nav>
-    <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
+ <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/mock" element={<Mockman/>} />
+        {/* <Route path="/cart" element={<Cart/>} />
+        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/signin" element={<Signin />} />
+        <Route path="/signup" element={<Signup />} /> */}
       </Routes>
     </div>
-    </Router>
   );
 }
 

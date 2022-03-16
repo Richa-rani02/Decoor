@@ -1,0 +1,19 @@
+.footer {
+  width: 100%;
+  background-color: var(--nav-bg);
+  padding: var(--spacing-2);
+  text-align: center;
+  color: var(--black);
+}
+
+.footer .footer-header {
+  font-size: 1.8rem;
+}
+
+.footer-icons {
+  display: flex;
+  gap: var(--spacing-10x);
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--spacing-2);
+}
