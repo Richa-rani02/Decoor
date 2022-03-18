@@ -7,7 +7,6 @@ import { useStateContext } from "../../context/stateContext";
 const Home = () => {
     const {state}=useStateContext();
     const {products}=state;
-    console.log(products);
     return (
         <div className="Home">
             <Hero/>

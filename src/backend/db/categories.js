@@ -1,7 +1,4 @@
 import { v4 as uuid } from "uuid";
-import macrame from "../../assets/featuremacrame.png";
-import plants from "../../assets/featureplants.jpg";
-import dreamcatcher from "../../assets/featuredream.png";
 /**
  * Category Database can be added here.
  * You can add category of your wish with different attributes
@@ -11,17 +8,17 @@ export const categories = [
   {
     _id: uuid(),
     categoryName: "Macrame",
-    image:macrame,
+    image:"https://res.cloudinary.com/dgomw715r/image/upload/v1647577729/ProjectImages/featuremacrame_xmaodp.png",
   },
   {
     _id: uuid(),
     categoryName: "Plants",
-    image:plants,
+    image:"https://res.cloudinary.com/dgomw715r/image/upload/v1647577729/ProjectImages/featureplants_byrfgl.jpg",
   },
   {
     _id: uuid(),
     categoryName: "DreamCatcher",
-    image:dreamcatcher,
+    image:"https://res.cloudinary.com/dgomw715r/image/upload/v1647577729/ProjectImages/featuredream_zhaeux.png",
    
   },
 ];

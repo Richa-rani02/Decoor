@@ -13,7 +13,7 @@ const Product = ({product}) => {
                     <span className="product-heading"><strong>{product.title}</strong><a><i
                         className="far fa-heart"></i></a></span>
                     <div className="price">&#x20B9;{product.price}  <span id="price-off">&#x20B9;{product.offprice}
-                                    </span> <span class="highlight-text">({discount}%
+                                    </span> <span className="highlight-text">({discount}%
                                     OFF)</span>
                     </div>
                 </div>

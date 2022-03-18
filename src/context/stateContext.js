@@ -1,7 +1,6 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { stateReducer } from "../reducers/stateReducer";
 import { getCategoryFromServer, getProductFromServer } from "../utils/getDataFromServer";
-
 const StateContext = createContext({});
 
 const StateProvider = ({ children }) => {
@@ -9,16 +8,21 @@ const StateProvider = ({ children }) => {
         categories: [],
         products: [],
         isLoading: false,
-        setError: ""
+        setError: "",
+        filters: {
+            searchProduct: "",
+            sortByPrice: "",
+            filterByRating: "",
+            priceRange: "",
+            productCategory: [],
+
+        }
     }
-
     const [state, dispatch] = useReducer(stateReducer, initialState);
-
     useEffect(() => {
         getCategoryFromServer(dispatch);
         getProductFromServer(dispatch);
     }, []);
-
 
     return (
         <StateContext.Provider value={{ state, dispatch }}>
