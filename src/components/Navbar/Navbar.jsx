@@ -3,11 +3,13 @@ import "./Navbar.css";
 import { Link, useLocation } from "react-router-dom";
 import {SEARCH_PRODUCT} from "../../utils/constants";
 import { useStateContext } from "../../context/stateContext";
+import { useAuth } from "../../context/authContext";
 const Navbar = () => {
     const [searchActive, setSearchActive] = useState(false);
     const [profileActive, setProfileActive] = useState(false);
     const location = useLocation();
     const {state,dispatch}=useStateContext();
+    const {authState:{token}}=useAuth();
     console.log(location.pathname);
     return (
         <header className="header">
@@ -27,7 +29,7 @@ const Navbar = () => {
                         <span className="badge icon-badge">0</span>
                     </span>
                 </Link>
-                <Link to="/">
+                <Link to={token ? "/wishlist": "/signin"}>
                     <span className="badge-container icon-col">
                         <div className="fas fa-heart" id="wishlist-btn"></div>
                         <span className="badge icon-badge">0</span>
@@ -38,7 +40,7 @@ const Navbar = () => {
             <form action="" className={`search-form ${searchActive && 'active'}`}>
                 <input type="search" id="search-box" placeholder="search here..." 
                 value={state.searchProduct}  onChange={(e)=>dispatch({type:SEARCH_PRODUCT ,payload:e.target.value})}/>
-                <label for="search-box" className="fas fa-search"></label>
+                <label htmlFor="search-box" className="fas fa-search"></label>
             </form>
 
             <div className={`profile-page ${profileActive && 'active'}`}>
@@ -47,6 +49,7 @@ const Navbar = () => {
                     <div className="profile-items">
                         <i className="fas fa-user-circle fa-lg"></i>
                         <h3>My Profile</h3>
+                        {/* {user.userData.firstName??"My Profile"} */}
                     </div>
                     <Link to="/signin">
                         <div className="profile-items">
