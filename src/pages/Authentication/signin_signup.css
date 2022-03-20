@@ -1,0 +1,50 @@
+.signin__page ,.signup__page{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.login ,.signup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+    
+}
+
+.login-form ,.signup-form {
+    width: 35rem;
+    padding:var(--spacing-2);
+    background-color: var(--card-bg-color);
+    border-radius: var(--spacing-8x);
+}
+.login-form h3, .signup-form h3{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--text-primary-color);
+}
+
+.login-form .box , .signup-form .box{
+    width: 100%;
+    background-color: var(--bg-color);
+    padding:var(--spacing-1-2);
+    margin: var(--spacing-1) 0;
+    border-radius: var(--spacing-0-5);
+    font-size: 1.6rem;
+    color:var(--text-primary-color);
+}
+
+.login-form p, .signup-form p{
+    font-size: 1.4rem;
+    padding:var(--spacing-0-5) 0;
+    color:var(--light-color);
+    text-align: left;
+}
+
+.login-form p a,.signup-form  p a{
+    color: var(--secondary-color);
+}
+
+

@@ -1,4 +1,4 @@
-import {categoryUrl,LOAD_CATEGORY,IS_LOADING,ERROR,productUrl,LOAD_PRODUCTS} from "../utils/constants";
+import {categoryUrl,LOAD_CATEGORY,LOAD_USER,productUrl,LOAD_PRODUCTS,signinUrl, signupUrl, TOKEN} from "../utils/constants";
 import axios from "axios";
 
 export const getCategoryFromServer=async(dispatch)=>{
@@ -20,6 +20,47 @@ export const getProductFromServer=async(dispatch)=>{
             dispatch({type:LOAD_PRODUCTS,payload:response.data.products});
         }
     } catch (error) {
+        console.log(error);
+    }
+}
+
+export const signupOnServer=async(userDetails,authDispatch)=>{
+    try{
+        console.log(userDetails);
+        const response=await axios.post(signupUrl,
+            {
+              firstName:userDetails.firstName,
+              lastName:userDetails.lastName,
+              email:userDetails.email,
+              password:userDetails.password
+            });
+            console.log(response.status);
+            if(response.status===201){
+                localStorage.setItem("sessiontoken",response.data.encodedToken)
+                authDispatch({type:TOKEN,payload:response.data.encodedToken})
+            }
+            
+    }catch(error){
+        console.log(error);
+    }
+}
+export const loginToServer=async(userDetails,authDispatch)=>{
+    try{
+        const response=await axios.post(signinUrl,
+            {
+              email:userDetails.email,
+              password:userDetails.password
+            });
+            if(response.status===200){
+
+                localStorage.setItem("sessiontoken",response.data.encodedToken)
+                authDispatch({type:TOKEN,payload:response.data.encodedToken})
+                //console.log(response.data.foundUser)
+                 authDispatch({type:LOAD_USER,payload:response.data.foundUser})
+            }
+
+            
+    }catch(error){
         console.log(error);
     }
 }

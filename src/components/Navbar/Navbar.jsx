@@ -3,10 +3,13 @@ import "./Navbar.css";
 import { Link, useLocation } from "react-router-dom";
 import {SEARCH_PRODUCT} from "../../utils/constants";
 import { useStateContext } from "../../context/stateContext";
+import { useAuth } from "../../context/authContext";
 const Navbar = () => {
-    const [active, setActive] = useState(false);
+    const [searchActive, setSearchActive] = useState(false);
+    const [profileActive, setProfileActive] = useState(false);
     const location = useLocation();
     const {state,dispatch}=useStateContext();
+    const {authState:{token}}=useAuth();
     console.log(location.pathname);
     return (
         <header className="header">
@@ -19,34 +22,36 @@ const Navbar = () => {
             </nav>
             <div className="nav-icons">
                 <div className="fas fa-bars " id="menu-btn"></div>
-                <div className="fas fa-search" id="search-btn" onClick={() => setActive(!active)}></div>
+                {location.pathname === '/products' && <div className="fas fa-search" id="search-btn" onClick={() => setSearchActive(prevCheck =>!prevCheck)}></div>}
                 <Link to="/">
                     <span className="badge-container icon-col">
                         <div className="fas fa-shopping-cart" id="cart-btn"></div>
                         <span className="badge icon-badge">0</span>
                     </span>
                 </Link>
-                <Link to="/">
+                <Link to={token ? "/wishlist": "/signin"}>
                     <span className="badge-container icon-col">
                         <div className="fas fa-heart" id="wishlist-btn"></div>
                         <span className="badge icon-badge">0</span>
                     </span>
                 </Link>
-                <div className="fas fa-user" id="profile-btn"></div>
+                <div className="fas fa-user" id="profile-btn" onClick={()=>setProfileActive(prevCheck =>!prevCheck)}></div>
             </div>
-            <form action="" className={`search-form ${active && 'active'}`}>
+            <form action="" className={`search-form ${searchActive && 'active'}`}>
                 <input type="search" id="search-box" placeholder="search here..." 
                 value={state.searchProduct}  onChange={(e)=>dispatch({type:SEARCH_PRODUCT ,payload:e.target.value})}/>
-                <label for="search-box" className="fas fa-search"></label>
+                <label htmlFor="search-box" className="fas fa-search"></label>
             </form>
-            <div className="profile-page ">
+
+            <div className={`profile-page ${profileActive && 'active'}`}>
                 <div className="profile-container">
 
                     <div className="profile-items">
                         <i className="fas fa-user-circle fa-lg"></i>
                         <h3>My Profile</h3>
+                        {/* {user.userData.firstName??"My Profile"} */}
                     </div>
-                    <Link to="/">
+                    <Link to="/signin">
                         <div className="profile-items">
                             <i className="fas fa-sign-in-alt fa-lg"></i>
                             <h3>Login</h3>

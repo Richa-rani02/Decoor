@@ -9,10 +9,10 @@ const Filter = () => {
             <div className="input-group">
                 <div className="filter-heading"><p className='label'>Category</p> <p className='clear-btn'
                     onClick={() => dispatch({ type: CLEAR_ALL })}>Clear All</p></div>
-                <form>
+                <form className="category_filterbox">
                     {state.categories.map((category) => (
                         <label key={category._id} className="filter-block">
-                            <input type="checkbox" value={category.categoryName.toLowerCase()}
+                            <input  type="checkbox" value={category.categoryName.toLowerCase()}
                                 onChange={(e) => dispatch({
                                     type: FILTER_BY_CATEGORY, payload: {
                                         isChecked: e.target.checked,

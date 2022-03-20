@@ -74,7 +74,7 @@ background-color: rgba(0, 0, 0, 0.12);
   
 /* custom checkbox */
 
-input[type="checkbox"]{
+.category_filterbox input[type="checkbox"]{
   appearance:none;
    content: "\2714";
    width: 1.3rem;
@@ -88,7 +88,7 @@ input[type="checkbox"]{
    border: 1px solid var(--light-color);
    
  }
- input[type="checkbox"]:after{
+ .category_filterbox input[type="checkbox"]:after{
    content:"\f00c";
    font-family:"Font Awesome 5 Free";
    font-weight:900;
@@ -97,20 +97,20 @@ input[type="checkbox"]{
    display:none;
     transition: all 0.2s ease;
  }
- input[type="checkbox"]:hover{
+ .category_filterbox input[type="checkbox"]:hover{
   background:teal;
    
  }
- input[type="checkbox"]:checked{
+ .category_filterbox input[type="checkbox"]:checked{
    background:teal;
    
  }
- input[type="checkbox"]:checked:after{
+ .category_filterbox input[type="checkbox"]:checked:after{
    display:block;
    transform: scale(1);
  }
 
- input[type="checkbox"]{
+ .category_filterbox input[type="checkbox"]{
   -webkit-transform: scale(1.2);
 }
 
