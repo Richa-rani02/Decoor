@@ -1,0 +1,108 @@
+.cart-item {
+    max-width: 50rem;
+    display: flex;
+    position: relative;
+    background-color: var(--card-bg-color);
+}
+
+.cart-item img {
+    height: 18rem;
+    object-fit: cover;
+}
+
+.cart-content {
+    padding: 0 var(--spacing-2);
+}
+
+.cart-heading {
+    display: flex;
+    margin-bottom: var(--spacing-10x);
+   color: var(--card-heading-color);
+   font-size: 1.8rem;
+}
+
+.cart-btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: var(--spacing-2x);
+}
+
+.product-price {
+    gap: var(--spacing-5x);
+}
+
+.previous-price {
+    text-decoration: line-through;
+    color: var(--light-color);
+    margin-left: var(--spacing-10x);
+}
+
+.badge-icon {
+    position: absolute;
+    right: 1rem;
+    top: 8px;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    border-radius: 50%;
+}
+
+.badge-icon i {
+    font-size: 1.8rem;
+}
+
+.quantity {
+    display: flex;
+    gap: var(--spacing-10x);
+    align-items: center;
+    margin-top: var(--spacing-1);
+    width: 10rem;
+    height: 4rem;
+    border:1px solid black;
+    border-radius:4px;
+    justify-content: space-between;
+    text-align: center;
+}
+input#number {
+    border: none;
+    height:100%;
+    width: 3rem;
+    font-size: 1.5rem;
+    background-color: transparent;
+    text-align: center;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.btn-qty {
+    height: 100%;
+    width: 3rem;
+    font-size: 2.1rem;
+    padding: 0 3px;
+    text-align: center;
+    text-decoration: none;
+    border:1px solid #ddd;
+    font-weight: 500;
+}
+.btn-qty#decrease{
+    border-radius: 4px 1px 1px 4px;
+}
+.btn-qty#increase{
+    border-radius: 1px 4px 4px 1px;
+}
+.price-off {
+    color:var(--highlight-text-color);
+}
+
+
+/* modal-active */

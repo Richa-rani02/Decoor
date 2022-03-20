@@ -20,7 +20,7 @@ const Navbar = () => {
             <div className="nav-icons">
                 <div className="fas fa-bars " id="menu-btn"></div>
                 <div className="fas fa-search" id="search-btn" onClick={() => setActive(!active)}></div>
-                <Link to="/">
+                <Link to="/cart">
                     <span className="badge-container icon-col">
                         <div className="fas fa-shopping-cart" id="cart-btn"></div>
                         <span className="badge icon-badge">0</span>

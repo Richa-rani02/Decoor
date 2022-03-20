@@ -9,6 +9,7 @@ import productmacrame2 from "../../assets/productmacrame-2.png";
 export const products = [
   {
     _id: uuid(),
+    id:1,
     title: "Feather Wall Macrame",
     price: "700",
     offprice:500,

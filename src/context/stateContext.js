@@ -7,6 +7,7 @@ const StateProvider = ({ children }) => {
     const initialState = {
         categories: [],
         products: [],
+        productsInCart:[],
         isLoading: false,
         setError: "",
         filters: {

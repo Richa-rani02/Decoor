@@ -7,7 +7,22 @@ const ProductList=()=>{
     const filteredProducts=getFilteredProducts(products,filters);
     return(
         <>
-         <h3 className="bottom-gutter-sm">Showing All Products({filteredProducts.length}) </h3>
+        <div className="alert-container bottom-gutter-sm">
+          <div className="left-side">
+          <h3 className="">Showing All Products({filteredProducts.length}) </h3>
+              </div>
+              <div className="right-side">
+              <div class="alert success">
+                        <div class="container-1">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="container-2">
+                            <p>Success</p>
+                            <p>Item Added to cart successfully</p>
+                        </div>
+                    </div>
+                  </div>
+        </div>
          <div className="products-grid">
          
          {filteredProducts.map((item)=>(
