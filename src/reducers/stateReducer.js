@@ -11,6 +11,21 @@ export const stateReducer = (state, action) => {
                 ...state,
                 products: action.payload
             };
+            case LOAD_WISHLIST:
+            return {
+                ...state,
+                wishlist: action.payload
+            };
+            case ADD_TO_WISHLIST:
+            return {
+                ...state,
+                wishlist: [...state.wishlist,action.payload]
+            };
+            case REMOVE_FROM_WISHLIST:
+                return {
+                    ...state,
+                    wishlist: state.wishlist.filter((product)=>product.product_id)
+                };
         case IS_LOADING:
             return {
                 ...state,
