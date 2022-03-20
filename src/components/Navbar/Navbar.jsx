@@ -4,7 +4,8 @@ import { Link, useLocation } from "react-router-dom";
 import {SEARCH_PRODUCT} from "../../utils/constants";
 import { useStateContext } from "../../context/stateContext";
 const Navbar = () => {
-    const [active, setActive] = useState(false);
+    const [searchActive, setSearchActive] = useState(false);
+    const [profileActive, setProfileActive] = useState(false);
     const location = useLocation();
     const {state,dispatch}=useStateContext();
     console.log(location.pathname);
@@ -19,7 +20,7 @@ const Navbar = () => {
             </nav>
             <div className="nav-icons">
                 <div className="fas fa-bars " id="menu-btn"></div>
-                <div className="fas fa-search" id="search-btn" onClick={() => setActive(!active)}></div>
+                {location.pathname === '/products' && <div className="fas fa-search" id="search-btn" onClick={() => setSearchActive(prevCheck =>!prevCheck)}></div>}
                 <Link to="/">
                     <span className="badge-container icon-col">
                         <div className="fas fa-shopping-cart" id="cart-btn"></div>
@@ -32,14 +33,15 @@ const Navbar = () => {
                         <span className="badge icon-badge">0</span>
                     </span>
                 </Link>
-                <div className="fas fa-user" id="profile-btn"></div>
+                <div className="fas fa-user" id="profile-btn" onClick={()=>setProfileActive(prevCheck =>!prevCheck)}></div>
             </div>
-            <form action="" className={`search-form ${active && 'active'}`}>
+            <form action="" className={`search-form ${searchActive && 'active'}`}>
                 <input type="search" id="search-box" placeholder="search here..." 
                 value={state.searchProduct}  onChange={(e)=>dispatch({type:SEARCH_PRODUCT ,payload:e.target.value})}/>
                 <label for="search-box" className="fas fa-search"></label>
             </form>
-            <div className="profile-page ">
+
+            <div className={`profile-page ${profileActive && 'active'}`}>
                 <div className="profile-container">
 
                     <div className="profile-items">
