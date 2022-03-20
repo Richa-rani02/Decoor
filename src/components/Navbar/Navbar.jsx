@@ -48,7 +48,7 @@ const Navbar = () => {
                         <i className="fas fa-user-circle fa-lg"></i>
                         <h3>My Profile</h3>
                     </div>
-                    <Link to="/">
+                    <Link to="/signin">
                         <div className="profile-items">
                             <i className="fas fa-sign-in-alt fa-lg"></i>
                             <h3>Login</h3>
