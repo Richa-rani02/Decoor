@@ -9,7 +9,7 @@ const Navbar = () => {
     const [profileActive, setProfileActive] = useState(false);
     const location = useLocation();
     const {state,dispatch}=useStateContext();
-    const {authState:{token}}=useAuth();
+    const {authState:{token,user}}=useAuth();
     console.log(location.pathname);
     return (
         <header className="header">

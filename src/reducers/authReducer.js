@@ -40,7 +40,7 @@ export const authReducer = (state, action) => {
             return {
                 ...state,
                 user: {
-                    ...state.user, user: action.payload
+                    ...state.user,user:action.payload
                 }
             };
         default:
