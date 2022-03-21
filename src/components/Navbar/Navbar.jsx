@@ -39,7 +39,7 @@ const Navbar = () => {
                 <Link to={token ? "/wishlist" : "/signin"}>
                     <span className="badge-container icon-col">
                         <div className="fas fa-heart" id="wishlist-btn"></div>
-                        <span className="badge icon-badge">0</span>
+                        <span className="badge icon-badge">{state.wishlist.length}</span>
                     </span>
                 </Link>
                 <div className="fas fa-user" id="profile-btn" onClick={() => setProfileActive(prevCheck => !prevCheck)}></div>

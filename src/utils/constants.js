@@ -19,3 +19,7 @@ export const LOAD_USER="LOAD_USER";
 export const  LOGOUT="LOGOUT";
 export const signupUrl="/api/auth/signup";
 export const signinUrl="/api/auth/login";
+export const wishlistUrl="/api/user/wishlist";
+export const  LOAD_WISHLIST="LOAD_WISHLIST"
+export const  ADD_TO_WISHLIST="ADD_TO_WISHLIST"
+export const REMOVE_FROM_WISHLIST="REMOVE_FROM_WISHLIST"
