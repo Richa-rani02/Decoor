@@ -16,5 +16,6 @@ export const EMAIL="EMAIL";
 export const PASSWORD="PASSWORD";
 export const TOKEN="TOKEN";
 export const LOAD_USER="LOAD_USER";
+export const  LOGOUT="LOGOUT";
 export const signupUrl="/api/auth/signup";
 export const signinUrl="/api/auth/login";

@@ -2,11 +2,12 @@ import { createContext, useContext, useEffect, useReducer } from "react";
 import { authReducer } from "../reducers/authReducer";
 
 const AuthContext=createContext({});
+
 const AuthProvider=({children})=>{
 const getoken=localStorage.getItem('sessiontoken')
-    const authInitialState={
-        user:[],
 
+    const authInitialState={
+        user:null,
         token:getoken??'',
 
         userDetails:{
@@ -17,11 +18,11 @@ const getoken=localStorage.getItem('sessiontoken')
         }
         
     };
-
     
 
 const [authState,authDispatch]=useReducer(authReducer,authInitialState); 
-console.log(authState.user);   
+
+
 
 
     return (
