@@ -1,4 +1,4 @@
-import { FIRST_NAME, LAST_NAME, EMAIL, PASSWORD, TOKEN,LOAD_USER } from "../utils/constants"
+import { FIRST_NAME, LAST_NAME, EMAIL, PASSWORD, TOKEN,LOAD_USER,LOGOUT } from "../utils/constants"
 export const authReducer = (state, action) => {
     switch (action.type) {
         case FIRST_NAME:
@@ -39,9 +39,12 @@ export const authReducer = (state, action) => {
             case LOAD_USER:
             return {
                 ...state,
-                user: {
-                    ...state.user,user:action.payload
-                }
+                user:action.payload
+            };
+            case LOGOUT:
+            return {
+                ...state,
+                user:null,token:null
             };
         default:
             return state

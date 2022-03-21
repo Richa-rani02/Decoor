@@ -38,6 +38,7 @@ export const signupOnServer=async(userDetails,authDispatch)=>{
             if(response.status===201){
                 localStorage.setItem("sessiontoken",response.data.encodedToken)
                 authDispatch({type:TOKEN,payload:response.data.encodedToken})
+                authDispatch({type:LOAD_USER,payload:response.data.createdUser})
             }
             
     }catch(error){
@@ -55,9 +56,9 @@ export const loginToServer=async(userDetails,authDispatch)=>{
 
                 localStorage.setItem("sessiontoken",response.data.encodedToken)
                 authDispatch({type:TOKEN,payload:response.data.encodedToken})
-                localStorage.setItem("setUser",JSON.stringify(response.data.foundUser));
-                //console.log(response.data.foundUser)
                  authDispatch({type:LOAD_USER,payload:response.data.foundUser})
+            }else{
+                console.log(response.data.errors[0])
             }
 
             

@@ -4,12 +4,10 @@ import { authReducer } from "../reducers/authReducer";
 const AuthContext=createContext({});
 
 const AuthProvider=({children})=>{
-    // const getUser=localStorage.JSON.parse(localStorage.getItem('setUser'));
 const getoken=localStorage.getItem('sessiontoken')
     const authInitialState={
-        user:{},
-
-        token:getoken??'',
+        user:null,
+        token:getoken??null,
 
         userDetails:{
             firstName:null,
@@ -23,7 +21,6 @@ const getoken=localStorage.getItem('sessiontoken')
 
 const [authState,authDispatch]=useReducer(authReducer,authInitialState); 
 
-    console.log(authState.user.firstName??"Test");   
 
 
 
