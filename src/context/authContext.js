@@ -5,9 +5,10 @@ const AuthContext=createContext({});
 
 const AuthProvider=({children})=>{
 const getoken=localStorage.getItem('sessiontoken')
+
     const authInitialState={
         user:null,
-        token:getoken??null,
+        token:getoken??'',
 
         userDetails:{
             firstName:null,

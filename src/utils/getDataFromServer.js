@@ -54,8 +54,8 @@ export const loginToServer=async(userDetails,authDispatch)=>{
             });
             if(response.status===200){
 
-                localStorage.setItem("sessiontoken",response.data.encodedToken)
-                authDispatch({type:TOKEN,payload:response.data.encodedToken})
+                 localStorage.setItem("sessiontoken",response.data.encodedToken)
+                 authDispatch({type:TOKEN,payload:response.data.encodedToken})
                  authDispatch({type:LOAD_USER,payload:response.data.foundUser})
             }else{
                 console.log(response.data.errors[0])
