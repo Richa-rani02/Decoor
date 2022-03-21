@@ -55,7 +55,7 @@ const Navbar = () => {
 
                     <div className="profile-items">
                         <i className="fas fa-user-circle fa-lg"></i>
-                        <h3>{token? user?.firstName:"My profile"}</h3>
+                        <h3>{token?`Welcome ${user?.firstName} `:"My profile"}</h3>
                     </div>
                     {token ? (
                         <div className="profile-items" onClick={() => logoutHandler()}>
