@@ -29,7 +29,7 @@ const Navbar = () => {
             </nav>
             <div className="nav-icons">
                 <div className="fas fa-bars " id="menu-btn"></div>
-                <div className="fas fa-search" id="search-btn" onClick={() => setActive(!active)}></div>
+                {location.pathname === '/products' && <div className="fas fa-search" id="search-btn" onClick={() => setSearchActive(prevCheck => !prevCheck)}></div>}
                 <Link to="/cart">
                     <span className="badge-container icon-col">
                         <div className="fas fa-shopping-cart" id="cart-btn"></div>
