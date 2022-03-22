@@ -7,11 +7,8 @@ const StateProvider = ({ children }) => {
     const initialState = {
         categories: [],
         products: [],
-<<<<<<< HEAD
-        productsInCart:[],
-=======
         wishlist:[],
->>>>>>> d3f7ff7a94cd0de4f13ece8849f2c10b970fa601
+        productInCart:[],
         isLoading: false,
         setError: "",
         filters: {
