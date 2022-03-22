@@ -1,4 +1,4 @@
-import {categoryUrl,LOAD_CATEGORY,LOAD_USER,productUrl,LOAD_PRODUCTS,signinUrl, signupUrl, TOKEN} from "../utils/constants";
+import {categoryUrl,LOAD_CATEGORY,LOAD_USER,productUrl,LOAD_PRODUCTS,signinUrl, signupUrl,wishlistUrl, TOKEN,LOAD_WISHLIST,ADD_TO_WISHLIST,REMOVE_FROM_WISHLIST} from "../utils/constants";
 import axios from "axios";
 
 export const getCategoryFromServer=async(dispatch)=>{
@@ -21,6 +21,38 @@ export const getProductFromServer=async(dispatch)=>{
         }
     } catch (error) {
         console.log(error);
+    }
+}
+export const addToWishlist=async(token,dispatch,product)=>{
+ 
+    try {
+        const response = await axios.post(wishlistUrl,{
+            product,
+        },{
+            headers:{
+                authorization:token
+            }
+        }
+        );
+        if (response.status === 200 || response.status===201) {
+            dispatch({type:ADD_TO_WISHLIST,payload:response.data.wishlist});
+        }
+    } catch (error) {
+        console.log("Error in Add to wishlist",error);
+    }
+}
+export const removefromwishlist=async(id,dispatch,token)=>{
+    try {
+        const response = await axios.delete(`api/user/wishlist/${id}`,{
+            headers:{
+                authorization:token,
+            },
+        });
+        if (response.status === 200 || response.status===201) {
+            dispatch({type:REMOVE_FROM_WISHLIST,payload:response.data.wishlist});
+        }
+    } catch (error) {
+        console.log("Error in removing product from wishlist",error);
     }
 }
 

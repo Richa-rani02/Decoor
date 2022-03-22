@@ -90,3 +90,6 @@
     background: var(--secondary-color);
 
 }
+.wishlist-toogle{
+  color: var(--highlight-text-color);
+}
