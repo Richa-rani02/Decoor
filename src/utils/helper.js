@@ -1,4 +1,6 @@
-
+export const isInList=(list,id)=>{
+  return Boolean(list.find((item)=>item._id===id))
+}
 export const FilterBysearch=(productList,{searchProduct})=>{
     let updatedList=[...productList];
     if(searchProduct){
@@ -41,8 +43,6 @@ export const FilterByCategory=(productList,{productCategory})=>{
         return productCategory.includes(product.categoryName.toLowerCase());
     })
 }
-
-
 
 const filterFunctions = [
     FilterBysearch,
