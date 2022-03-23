@@ -33,7 +33,7 @@ const Navbar = () => {
                 <Link to="/cart">
                     <span className="badge-container icon-col">
                         <div className="fas fa-shopping-cart" id="cart-btn"></div>
-                        <span className="badge icon-badge">0</span>
+                        <span className="badge icon-badge">{state.productInCart.length}</span>
                     </span>
                 </Link>
                 <Link to={token ? "/wishlist" : "/signin"}>
