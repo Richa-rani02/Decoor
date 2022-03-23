@@ -30,7 +30,7 @@ const Navbar = () => {
             <div className="nav-icons">
                 <div className="fas fa-bars " id="menu-btn"></div>
                 {location.pathname === '/products' && <div className="fas fa-search" id="search-btn" onClick={() => setSearchActive(prevCheck => !prevCheck)}></div>}
-                <Link to="/cart">
+                <Link to={token ? "/cart" : "/signin"}>
                     <span className="badge-container icon-col">
                         <div className="fas fa-shopping-cart" id="cart-btn"></div>
                         <span className="badge icon-badge">{state.productInCart.length}</span>
