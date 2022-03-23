@@ -1,4 +1,4 @@
-import { LOAD_CATEGORY, IS_LOADING, ERROR, LOAD_PRODUCTS, FILTER_BY_CATEGORY,ADD_TO_WISHLIST,REMOVE_FROM_WISHLIST, SORT_BY_PRICE, SEARCH_PRODUCT, FILTER_BY_RATING, PRICE_RANGE, CLEAR_ALL } from "../utils/constants";
+import { LOAD_CATEGORY, IS_LOADING, ERROR, LOAD_PRODUCTS, FILTER_BY_CATEGORY,ADD_TO_WISHLIST,REMOVE_FROM_WISHLIST, SORT_BY_PRICE, SEARCH_PRODUCT, FILTER_BY_RATING, PRICE_RANGE, CLEAR_ALL,ADD_TO_CART,REMOVE_FROM_CART,UPDATE_QTY } from "../utils/constants";
 export const stateReducer = (state, action) => {
     switch (action.type) {
         
@@ -23,6 +23,26 @@ export const stateReducer = (state, action) => {
                     ...state,
                     wishlist:[...action.payload]
                 };
+            case ADD_TO_CART:{
+                return{
+                    ...state,
+                    productInCart:action.payload
+                }
+
+            } ;
+            case REMOVE_FROM_CART:{
+                return{
+                    ...state,
+                    productInCart:action.payload
+                }
+            } ;
+            case UPDATE_QTY:{
+              return{
+                  ...state,
+                  productInCart:action.payload
+              }
+            } ;
+
         case IS_LOADING:
             return {
                 ...state,

@@ -5,3 +5,16 @@
     width: 100%;
     cursor: pointer;
 }
+
+.alert-container{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.right-side{
+    width: 30rem;
+}
+.alert{
+    z-index: 1000;
+    position: absolute;
+}

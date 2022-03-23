@@ -8,6 +8,7 @@ const StateProvider = ({ children }) => {
         categories: [],
         products: [],
         wishlist:[],
+        productInCart:[],
         isLoading: false,
         setError: "",
         filters: {

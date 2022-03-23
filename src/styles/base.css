@@ -158,6 +158,25 @@ hr {
 .grey-text{
     color:var(--light-color)
 }
+.xsm-text{
+    font-size: var(--spacing-5x);
+}
+.small-text{
+    font-size: var(--spacing-1)
+}
+.medium-text{
+    font-size: var(--spacing-1-5);
+}
+.large-text{
+
+font-size: var(--spacing-2)
+}
+.xl-text{
+    font-size: var(--spacing-4)
+}
+.block-element{
+    display: block;
+}
 
 
 /* media queries  */
