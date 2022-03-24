@@ -2,6 +2,7 @@ import { useAuth } from "../../context/authContext";
 import { useStateContext } from "../../context/stateContext";
 import "./Product.css";
 import { useNavigate } from "react-router-dom";
+import {AiOutlineShopping} from "react-icons/ai";
 import { addToWishlist, removefromwishlist, addToCart, removeFromCart } from "../../utils/getDataFromServer";
 import { isInList } from "../../utils/helper";
 const Product = ({ product }) => {
@@ -56,9 +57,10 @@ const Product = ({ product }) => {
                     </div>
                 </div>
                 <div className="product-btn-container">
-                    <button className="btn btn-solid-primary btn-lg" onClick={() => CartHandler()}>
+                    <button className="btn btn-solid-primary btn-lg flex-display" onClick={() => CartHandler()}>
                         {isInCart?<span>Go to Cart</span>:<span>Add to Cart</span>}
-                        <i className="fas fa-shopping-cart"></i>
+                        {/* <i className="fas fa-shopping-cart"></i> */}
+                        <AiOutlineShopping className="add-btn-icon"/>
                     </button>
                 </div>
             </div>

@@ -26,6 +26,7 @@
 .List__wrap {
   flex: 1;
   padding: var(--spacing-3) var(--spacing-4) var(--spacing-3) var(--spacing-2) ;
+  
 }
 
 .filter__responsive{
