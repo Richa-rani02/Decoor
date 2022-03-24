@@ -2,7 +2,7 @@ import "./ProductList.css";
 import {Product} from "../../../components/index";
 import { useStateContext } from "../../../context/stateContext";
 import {getFilteredProducts} from "../../../utils/helper";
-const ProductList=()=>{
+const ProductList=({setActive})=>{
     const {state:{ products,filters},}=useStateContext();
     const filteredProducts=getFilteredProducts(products,filters);
     return(
@@ -10,7 +10,12 @@ const ProductList=()=>{
         <div className="alert-container bottom-gutter-sm">
           <div className="left-side">
           <h3 className="">Showing All Products({filteredProducts.length}) </h3>
-              </div>
+          </div>
+          <div className="right-side auto-margin">
+          <div className="filter__responsive" onClick={()=>setActive(prevstate=> !prevstate)}>
+            <span>Filter</span><i className="fas fa-filter"></i>
+        </div>
+          </div>
         </div>
          <div className="products-grid">
          

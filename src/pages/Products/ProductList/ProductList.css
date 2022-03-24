@@ -11,10 +11,11 @@
     justify-content: space-between;
     position: relative;
 }
-.right-side{
-    width: 30rem;
-}
+  .right-side{
+  width: auto;
+   }
 .alert{
     z-index: 1000;
     position: absolute;
 }
+

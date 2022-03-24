@@ -29,14 +29,12 @@
 }
 
 .filter__responsive{
-    position:absolute;
-    top: 50%;
-    left: 0;
-    z-index: 1000;
-    position: fixed;
-    background-color: aqua;
-    padding: var(--spacing-1);
-    font-size: 2rem;
-    display: none;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  display: none;
+  transition: .4s linear;
 }
-
+    .filter__responsive span{
+      text-decoration: underline;
+    }

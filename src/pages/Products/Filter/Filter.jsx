@@ -4,6 +4,8 @@ import { rating } from "../../../utils/data";
 import { FILTER_BY_CATEGORY, SORT_BY_PRICE, FILTER_BY_RATING, PRICE_RANGE, CLEAR_ALL } from "../../../utils/constants";
 const Filter = () => {
     const { state, dispatch } = useStateContext();
+
+
     return (
         <div>
             <div className="input-group">
@@ -32,11 +34,11 @@ const Filter = () => {
                 <p className='label'>Price</p>
                 <form className="price-sort">
                     <label className="filter-block">
-                        <input type="radio" name="name"
+                        <input checked={state.filters.sortByPrice==="LOW_TO_HIGH"} type="radio" name="name"
                             onChange={() => dispatch({ type: SORT_BY_PRICE, payload: "LOW_TO_HIGH" })} /> Low to High
                     </label>
                     <label className="filter-block">
-                        <input type="radio" name="name"
+                        <input checked={state.filters.sortByPrice==="HIGH_TO_LOW"} type="radio" name="name"
                             onChange={() => dispatch({ type: SORT_BY_PRICE, payload: "HIGH_TO_LOW" })} /> High to Low
                     </label>
                 </form>
@@ -45,7 +47,7 @@ const Filter = () => {
                 <p className='label'>Price Range</p>
 
                 <input className="slider-input"
-                    value={state.priceRange}
+                    value={state.filters.priceRange}
                     onChange={(e) => dispatch({ type: PRICE_RANGE, payload: e.target.value })}
                     type="range"
                     min="100"
@@ -73,7 +75,7 @@ const Filter = () => {
                 <div className="toogle-list">
                     {rating.map(({ ratinglabel, value }) => (
                         <>
-                            <input className="input-rating" type="radio" name="rating" id={ratinglabel}
+                            <input checked={Number(state.filters.filterByRating)===Number(value)} className="input-rating" type="radio" name="rating" id={ratinglabel}
                                 value={value}
                                 onChange={(e) => dispatch({ type: FILTER_BY_RATING, payload: e.target.value })} />
                             <label className="rating-label" htmlFor={ratinglabel}>

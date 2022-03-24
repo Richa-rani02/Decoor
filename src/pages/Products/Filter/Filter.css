@@ -39,7 +39,7 @@ background-color: rgba(0, 0, 0, 0.12);
     padding:8px 0 ;
    }
   
-  .toogle-list input[type="radio"]:checked + label{
+  .toogle-list input[type="radio"]:checked + .rating-label{
     background-color: teal;
     color: var(--white);
     box-shadow: 0 15px 45px rgba(24,249,141,0.2);

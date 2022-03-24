@@ -17,7 +17,6 @@ const StateProvider = ({ children }) => {
             filterByRating: "",
             priceRange: "",
             productCategory: [],
-
         }
     }
     const [state, dispatch] = useReducer(stateReducer, initialState);
@@ -25,7 +24,7 @@ const StateProvider = ({ children }) => {
         getCategoryFromServer(dispatch);
         getProductFromServer(dispatch);
     }, []);
-
+console.log(state.filters.filterByRating);
     return (
         <StateContext.Provider value={{ state, dispatch }}>
             {children}
