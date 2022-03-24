@@ -24,7 +24,7 @@ const StateProvider = ({ children }) => {
         getCategoryFromServer(dispatch);
         getProductFromServer(dispatch);
     }, []);
-console.log(state.filters.filterByRating);
+
     return (
         <StateContext.Provider value={{ state, dispatch }}>
             {children}

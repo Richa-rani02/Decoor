@@ -4,4 +4,6 @@
     gap:var(--spacing-1-5);
     width: 100%;
     cursor: pointer;
+    align-items: center;
+    justify-items: center;
 }

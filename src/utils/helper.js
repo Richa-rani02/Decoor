@@ -48,7 +48,7 @@ export const FilterByPriceSlider = (productList, { priceRange }) => {
   let updatedList = [...productList];
   if (priceRange) {
     return updatedList.filter(
-      (products) => parseInt(products.price) <= parseInt(priceRange)
+      (products) => parseInt(products.offprice) <= parseInt(priceRange)
     );
   }
   return updatedList;
