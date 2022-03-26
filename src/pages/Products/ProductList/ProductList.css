@@ -4,6 +4,8 @@
     gap:var(--spacing-1-5);
     width: 100%;
     cursor: pointer;
+    align-items: center;
+    justify-content: center;
 }
 
 .alert-container{
@@ -11,10 +13,11 @@
     justify-content: space-between;
     position: relative;
 }
-.right-side{
-    width: 30rem;
-}
+  .right-side{
+  width: auto;
+   }
 .alert{
     z-index: 1000;
     position: absolute;
 }
+

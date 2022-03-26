@@ -57,7 +57,7 @@ background-color: var(--highlight-text-color);
 
 .header .search-form{
     position: absolute;
-    top:101%; right:-110%;
+    top:101%; right:-200%;
     width: 50rem;
     height:5rem;
     background-color: var(--white);
@@ -72,6 +72,7 @@ background-color: var(--highlight-text-color);
 .header .search-form.active{
     right:0;
     transition: .4s linear;
+
 }
 
 .header .search-form input{
