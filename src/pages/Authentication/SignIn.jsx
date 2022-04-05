@@ -24,6 +24,7 @@ const SignIn = () => {
                     <p>forget your password <a href="#" className="link-text-primary">click here</a></p>
                     <p>don't have an account <Link to="/signup" className="link-text-primary">create new</Link></p>
                     <button type="submit" value="login" className="btn btn-solid-primary btn-lg btn-rounded-5">Login</button>
+                    <button type="submit" value="login" className="btn btn-outline-primary btn-lg btn-rounded-5">Guest Login</button>
                 </form>
             </section>
         </div>
