@@ -73,10 +73,10 @@ const Filter = () => {
             <div className="input-group">
                 <p className='label'>Rating</p>
                 <div className="toogle-list">
-                    {rating.map(({ ratinglabel, value }) => (
+                    {rating.map(({ id,ratinglabel, value }) => (
                         <>
                             <input checked={Number(state.filters.filterByRating)===Number(value)} className="input-rating" type="radio" name="rating" id={ratinglabel}
-                                value={value}
+                                value={value} key={id}
                                 onChange={(e) => dispatch({ type: FILTER_BY_RATING, payload: e.target.value })} />
                             <label className="rating-label" htmlFor={ratinglabel}>
                                 <span>{ratinglabel}</span>
