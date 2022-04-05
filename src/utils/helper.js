@@ -25,10 +25,10 @@ export const FilterBysearch = (productList, { searchProduct }) => {
 export const sortByPrice = (productList, { sortByPrice }) => {
   let updatedList = [...productList];
   if (sortByPrice === "HIGH_TO_LOW") {
-    return updatedList.sort((a, b) => b["price"] - a["price"]);
+    return updatedList.sort((a, b) => b["offprice"] - a["offprice"]);
   }
   if (sortByPrice === "LOW_TO_HIGH") {
-    return updatedList.sort((a, b) => a["price"] - b["price"]);
+    return updatedList.sort((a, b) => a["offprice"] - b["offprice"]);
   }
   return updatedList;
 
