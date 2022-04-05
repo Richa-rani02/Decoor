@@ -267,12 +267,13 @@ hr {
         z-index: 3;
         position: absolute;
         background-color: var(--white);
-        left: -101%
+        left: -101%;
+        transition: left 1s ease-out;
     }
 
     .product_page .filter__wrap.active {
         left: 0;
-        transition: .4s linear;
+        transition: left 0.5s ease-out;
     }
 
     .product_page .filter__responsive {
