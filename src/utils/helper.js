@@ -15,9 +15,6 @@ export const priceDetails = (cartItem) => {
     discount: 0,
   })
 }
-
-
-
 export const FilterBysearch = (productList, { searchProduct }) => {
   let updatedList = [...productList];
   if (searchProduct) {
