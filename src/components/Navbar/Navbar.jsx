@@ -24,8 +24,8 @@ const Navbar = () => {
                 <Link to="/" className="logo">DECOR<span className="small-text ">KART</span> </Link>
             </div>
             <nav className="navbar">
-                <Link id="nav-home" to="/">home</Link>
-                {location.pathname === '/' && <><a id="nav-features" href="#features" >features</a><a id="nav-products" href="#products">products</a></>}
+                <Link id="nav-home" to="/">Home</Link>
+                {location.pathname === '/' && <><a id="nav-features" href="#features" >Features</a><a id="nav-products" href="#products">Products</a></>}
             </nav>
             <div className="nav-icons">
                 <div className="fas fa-bars " id="menu-btn"></div>

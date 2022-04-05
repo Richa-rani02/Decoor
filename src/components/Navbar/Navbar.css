@@ -49,7 +49,7 @@ background-color: var(--highlight-text-color);
     text-align: center;
 }
 .header .nav-icons div:hover{
-    background: var(--secondary-color);
+    background: rgb(36, 76, 76,0.7);
     color:var(--white);
 }
 #menu-btn{
