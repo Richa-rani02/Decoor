@@ -1,6 +1,4 @@
 import { v4 as uuid } from "uuid";
-import productmacrame1 from "../../assets/productmacrame-1.png";
-import productmacrame2 from "../../assets/productmacrame-2.png";
 /**
  * Product Database can be added here.
  * You can add products of your wish with different attributes

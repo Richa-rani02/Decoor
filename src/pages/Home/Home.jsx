@@ -1,5 +1,5 @@
 import "./Home.css";
-import {Product,Footer} from "../../components/index";
+import {Product} from "../../components/index";
 import {Hero} from "./HeroSection/Hero";
 import {CategoryList} from "./CategoryList/CategoryList";
 import { useStateContext } from "../../context/stateContext";
@@ -19,7 +19,6 @@ const Home = () => {
                     ))}
                 </div>
             </section>
-            <Footer/>
         </div>
     );
 };
