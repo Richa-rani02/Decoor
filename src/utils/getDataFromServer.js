@@ -1,4 +1,4 @@
-import { categoryUrl, LOAD_CATEGORY, LOAD_USER, productUrl, LOAD_PRODUCTS, signinUrl, signupUrl, wishlistUrl, TOKEN, UPDATE_QTY, ADD_TO_WISHLIST, REMOVE_FROM_WISHLIST, cartUrl, ADD_TO_CART, REMOVE_FROM_CART, INC_QTY, DEC_QTY } from "../utils/constants";
+import { categoryUrl, LOAD_CATEGORY, productUrl,ERROR, LOAD_PRODUCTS, signinUrl, signupUrl, wishlistUrl, TOKEN, UPDATE_QTY, ADD_TO_WISHLIST, REMOVE_FROM_WISHLIST, cartUrl, ADD_TO_CART, REMOVE_FROM_CART, INC_QTY} from "../utils/constants";
 import axios from "axios";
 import { authActions } from "./actions";
 import toast from "react-hot-toast";
@@ -26,7 +26,7 @@ export const getProductFromServer = async (dispatch) => {
     }
 }
 export const addToWishlist = async (token, dispatch, product) => {
-
+    const toastId=toast.loading("adding product to wishlist...");
     try {
         const response = await axios.post(wishlistUrl, {
             product,
@@ -37,13 +37,21 @@ export const addToWishlist = async (token, dispatch, product) => {
         }
         );
         if (response.status === 200 || response.status === 201) {
+            toast.success("Item added to wishlist!", {
+                id: toastId,
+              });
+
             dispatch({ type: ADD_TO_WISHLIST, payload: response.data.wishlist });
         }
     } catch (error) {
-        console.log("Error in Add to wishlist", error);
+        toast.error("Some error occured :( .Try again!",{
+            id:toastId,
+        });
+        dispatch({ type: ERROR, payload: error.response });
     }
 }
 export const removefromwishlist = async (id, dispatch, token) => {
+    const toastId=toast.loading("Deleting item from wishlist");
     try {
         const response = await axios.delete(`api/user/wishlist/${id}`, {
             headers: {
@@ -51,14 +59,21 @@ export const removefromwishlist = async (id, dispatch, token) => {
             },
         });
         if (response.status === 200 || response.status === 201) {
+            toast.success("Item deleted from wishlist",{
+                id:toastId
+            });
             dispatch({ type: REMOVE_FROM_WISHLIST, payload: response.data.wishlist });
         }
     } catch (error) {
-        console.log("Error in removing product from wishlist", error);
+        toast.error("Some error occured :( .Try again!",{
+            id:toastId,
+        });
+        dispatch({ type: ERROR, payload: error.response });
     }
 }
 
 export const addToCart = async (token, dispatch, product) => {
+    const toastId=toast.loading("adding product to cart...")
     try {
         const response = await axios.post(cartUrl, {
             product
@@ -68,15 +83,22 @@ export const addToCart = async (token, dispatch, product) => {
             }
         });
         if (response.status === 200 || response.status === 201) {
+            toast.success("Item added to cart !",{
+                id:toastId
+            })
             dispatch({ type: ADD_TO_CART, payload: response.data.cart });
         }
     }
     catch (error) {
-        console.log("Error while Adding item in cart", error);
+        toast.error("Some error occured :( .Try again!",{
+            id:toastId,
+        });
+        dispatch({ type: ERROR, payload: error.response });
     }
 }
 
 export const removeFromCart = async (token, dispatch, id) => {
+    const toastId=toast.loading("Deleting item to cart...")
     try {
         const response = await axios.delete(`api/user/cart/${id}`, {
             headers: {
@@ -84,15 +106,22 @@ export const removeFromCart = async (token, dispatch, id) => {
             }
         });
         if (response.status === 200 || response.status == 201) {
+            toast.success("Item deleted from cart!",{
+                id:toastId
+            })
             dispatch({ type: REMOVE_FROM_CART, payload: response.data.cart })
         }
     }
     catch (error) {
-        console.log("Error while removing item from cart", error);
+        toast.error("Some error occured :( .Try again!",{
+            id:toastId,
+        });
+        dispatch({ type: ERROR, payload: error.response });
     }
 }
 
 export const updateQty = async (token, dispatch, id, actionType) => {
+    const toastId = toast.loading("Updating quantity...");
     try {
         const response = await axios.post(`api/user/cart/${id}`, {
             action: {
@@ -104,10 +133,16 @@ export const updateQty = async (token, dispatch, id, actionType) => {
             }
         });
         if (response.status === 200 || response.status === 201) {
+            toast.success("Quantity updated.", {
+                id: toastId,
+              });
             dispatch({ type: UPDATE_QTY, payload: response.data.cart })
         }
     } catch (error) {
-        console.log("Error while updating qty of product", error);
+        toast.error("Some error occured :( .Try again!",{
+            id:toastId,
+        });
+        dispatch({ type: ERROR, payload: error.response });
     }
 }
 
@@ -164,6 +199,6 @@ export const loginToServer = async (userDetails, authDispatch, navigate) => {
         toast.error("Some error occured in login. Try Again.", {
             id: toastId,
           });
-          dispatch({ type: "AUTH_ERROR", payload: error.response });
+          dispatch({ type: authActions.AUTHERROR, payload: error.response });
     }
 }

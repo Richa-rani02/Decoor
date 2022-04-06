@@ -9,7 +9,7 @@ const CategoryList = () => {
    
     return (
         <section>
-            <h1 className="heading-1 top-gutter-lg center-text bottom-gutter-lg"> our <span>Features</span> </h1>
+            <h1 className="heading-1 top-gutter-lg center-text bottom-gutter-lg"> Our <span>Features</span> </h1>
             <div className="features-container" id="features">
                 {categories.map((item) => (
                     <Category key={item._id} category={item} />
