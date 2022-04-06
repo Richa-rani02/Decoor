@@ -19,15 +19,6 @@ export const FILTER_BY_RATING="FILTER_BY_RATING";
 export const PRICE_RANGE="PRICE_RANGE";
 export const CLEAR_ALL="CLEAR_ALL";
 
-// user 
-export const FIRST_NAME="FIRST_NAME";
-export const LAST_NAME="LAST_NAME";
-export const EMAIL="EMAIL";
-export const PASSWORD="PASSWORD";
-export const TOKEN="TOKEN";
-export const LOAD_USER="LOAD_USER";
-export const  LOGOUT="LOGOUT";
-
 //products
 export const  LOAD_WISHLIST="LOAD_WISHLIST";
 export const  ADD_TO_WISHLIST="ADD_TO_WISHLIST";

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { LOGOUT } from "../../utils/constants";
+import { authActions } from "../../utils/actions";
 import "./Navbar.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { SEARCH_PRODUCT } from "../../utils/constants";
@@ -12,7 +12,7 @@ const Navbar = () => {
     const [profileActive, setProfileActive] = useState(false);
     const location = useLocation();
     const { state, dispatch } = useStateContext();
-    const { authState: { token, user }, authDispatch } = useAuth();
+    const { authState: { token }, authDispatch } = useAuth();
 
     const logoutHandler = () => {
         localStorage.removeItem("sessiontoken")
@@ -20,7 +20,7 @@ const Navbar = () => {
         toast.success("You're logged out successfully", {
             id: toastId,
         });
-        authDispatch({ type: LOGOUT })
+        authDispatch({ type: authActions.LOGOUT })
 
     }
     return (
@@ -60,7 +60,7 @@ const Navbar = () => {
 
                     <div className="profile-items">
                         <i className="fas fa-user-circle fa-lg"></i>
-                        <h3>{token ? `Welcome ${user?.firstName} ` : "My profile"}</h3>
+                        <h3>My profile</h3>
                     </div>
                     {token ? (
                         <div className="profile-items" onClick={() => logoutHandler()}>
