@@ -1,7 +1,7 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import {Navbar,Footer} from "./components/index";
-import { Home,Products,SignIn,SignUp,Wishlist,Cart } from "./pages/index";
+import { Home,Products,SignIn,SignUp,Wishlist,Cart,ErrorPage } from "./pages/index";
 import Mockman from "mockman-js";
 import { ToasterWrapper } from "./utils/ToastWrapper";
 function App() {
@@ -18,6 +18,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/cart" element={<Cart/>}/>
+        <Route path="/*" element={<ErrorPage/>} />
       </Routes>
       </div>
       <Footer/>
