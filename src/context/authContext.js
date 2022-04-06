@@ -7,16 +7,9 @@ const AuthProvider=({children})=>{
 const getoken=localStorage.getItem('sessiontoken')
 
     const authInitialState={
-        user:null,
+        error:null,
         token:getoken??'',
-
-        userDetails:{
-            firstName:null,
-            lastName:null,
-            email:null,
-            password:null
-        }
-        
+        userDetails:null   
     };
     
 

@@ -1,5 +1,6 @@
 import {categoryUrl,LOAD_CATEGORY,LOAD_USER,productUrl,LOAD_PRODUCTS,signinUrl, signupUrl,wishlistUrl, TOKEN,UPDATE_QTY,ADD_TO_WISHLIST,REMOVE_FROM_WISHLIST,cartUrl,ADD_TO_CART,REMOVE_FROM_CART,INC_QTY,DEC_QTY} from "../utils/constants";
 import axios from "axios";
+import { authActions } from "./actions";
 
 export const getCategoryFromServer=async(dispatch)=>{
  
@@ -111,7 +112,6 @@ try{
 
 export const signupOnServer=async(userDetails,authDispatch)=>{
     try{
-        console.log(userDetails);
         const response=await axios.post(signupUrl,
             {
               firstName:userDetails.firstName,
@@ -122,8 +122,9 @@ export const signupOnServer=async(userDetails,authDispatch)=>{
             console.log(response.status);
             if(response.status===201){
                 localStorage.setItem("sessiontoken",response.data.encodedToken)
-                authDispatch({type:TOKEN,payload:response.data.encodedToken})
-                authDispatch({type:LOAD_USER,payload:response.data.createdUser})
+                authDispatch({type:authActions.AUTH,payload:{user:response.data.createdUser,token:response.data.encodedToken}})
+                // authDispatch({type:TOKEN,payload:response.data.encodedToken})
+                // authDispatch({type:LOAD_USER,payload:response.data.createdUser})
             }
             
     }catch(error){
@@ -140,8 +141,9 @@ export const loginToServer=async(userDetails,authDispatch)=>{
             if(response.status===200){
 
                  localStorage.setItem("sessiontoken",response.data.encodedToken)
-                 authDispatch({type:TOKEN,payload:response.data.encodedToken})
-                 authDispatch({type:LOAD_USER,payload:response.data.foundUser})
+                //  authDispatch({type:TOKEN,payload:response.data.encodedToken})
+                //  authDispatch({type:LOAD_USER,payload:response.data.foundUser})
+                  authDispatch({type:authActions.AUTH,payload:{user:response.data.foundUser,token:response.data.encodedToken}})
             }else{
                 console.log(response.data.errors[0])
             }
