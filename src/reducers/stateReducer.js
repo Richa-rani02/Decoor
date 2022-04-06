@@ -1,7 +1,17 @@
 import { LOAD_CATEGORY, IS_LOADING, ERROR, LOAD_PRODUCTS, FILTER_BY_CATEGORY,ADD_TO_WISHLIST,REMOVE_FROM_WISHLIST, SORT_BY_PRICE, SEARCH_PRODUCT, FILTER_BY_RATING, PRICE_RANGE, CLEAR_ALL,ADD_TO_CART,REMOVE_FROM_CART,UPDATE_QTY } from "../utils/constants";
 export const stateReducer = (state, action) => {
     switch (action.type) {
-        
+        case IS_LOADING:
+            return {
+                ...state,
+                isLoading: !state.isLoading
+            }
+        case ERROR:
+            return {
+                ...state,
+                isLoading: false,
+                setError: action.payload
+            }
         case LOAD_CATEGORY:
             return {
                 ...state,
@@ -42,18 +52,6 @@ export const stateReducer = (state, action) => {
                   productInCart:action.payload
               }
             } ;
-
-        case IS_LOADING:
-            return {
-                ...state,
-                isLoading: !state.isLoading
-            }
-        case ERROR:
-            return {
-                ...state,
-                isLoading: false,
-                setError: action.payload
-            }
         case FILTER_BY_CATEGORY:
             return {
                 ...state,

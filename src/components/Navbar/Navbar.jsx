@@ -1,24 +1,31 @@
 import { useState } from "react";
-import { LOGOUT } from "../../utils/constants";
+import { authActions } from "../../utils/actions";
 import "./Navbar.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { SEARCH_PRODUCT } from "../../utils/constants";
 import { useStateContext } from "../../context/stateContext";
 import { useAuth } from "../../context/authContext";
+import toast from "react-hot-toast";
 const Navbar = () => {
     let navigate = useNavigate();
     const [searchActive, setSearchActive] = useState(false);
     const [profileActive, setProfileActive] = useState(false);
     const location = useLocation();
     const { state, dispatch } = useStateContext();
-    const { authState: { token, user}, authDispatch } = useAuth();
+    const { authState: { token }, authDispatch } = useAuth();
 
     const logoutHandler = () => {
         localStorage.removeItem("sessiontoken")
-        authDispatch({ type: LOGOUT })
-        
+        const toastId = toast.loading("Logging out...");
+        toast.success("You're logged out successfully", {
+            id: toastId,
+        });
+        authDispatch({ type: authActions.LOGOUT })
+        setProfileActive(prev=>!prev);
+        navigate("/");
+
     }
-  return (
+   return (
         <header className="header">
             <div className="logo">
                 <Link to="/" className="logo">DECOR<span className="small-text ">KART</span> </Link>
@@ -55,7 +62,7 @@ const Navbar = () => {
 
                     <div className="profile-items">
                         <i className="fas fa-user-circle fa-lg"></i>
-                        <h3>{token?`Welcome ${user?.firstName} `:"My profile"}</h3>
+                        <h3>My profile</h3>
                     </div>
                     {token ? (
                         <div className="profile-items" onClick={() => logoutHandler()}>

@@ -1,51 +1,25 @@
-import { FIRST_NAME, LAST_NAME, EMAIL, PASSWORD, TOKEN,LOAD_USER,LOGOUT } from "../utils/constants"
+import { FIRST_NAME, LAST_NAME, EMAIL, PASSWORD, TOKEN, LOAD_USER, LOGOUT } from "../utils/constants"
+import { authActions } from "../utils/actions";
 export const authReducer = (state, action) => {
-    switch (action.type) {
-        case FIRST_NAME:
+    const { type, payload } = action
+    switch (type) {
+        case authActions.AUTH:
             return {
                 ...state,
-                userDetails: {
-                    ...state.userDetails, firstName: action.payload
-                }
-            };
-        case LAST_NAME:
+                token: payload.token,
+                userDetails: payload.user
+            }
+        case authActions.LOGOUT:
+            localStorage.removeItem("sessiontoken")
             return {
                 ...state,
-                userDetails: {
-                    ...state.userDetails, lastName: action.payload
-                }
+                userDetails: null, token: null
             };
-        case EMAIL:
-            return {
+        case authActions.AUTHERROR:
+            return{
                 ...state,
-                userDetails: {
-                    ...state.userDetails, email: action.payload
-                }
-            };
-        case PASSWORD:
-            return {
-                ...state,
-                userDetails: {
-                    ...state.userDetails, password: action.payload
-                }
-            };
-        case TOKEN:
-            return {
-                ...state,
-                token: {
-                    ...state, token: action.payload
-                }
-            };
-            case LOAD_USER:
-            return {
-                ...state,
-                user:action.payload
-            };
-            case LOGOUT:
-            return {
-                ...state,
-                user:null,token:null
-            };
+                error:payload
+            }    
         default:
             return state
 

@@ -46,5 +46,8 @@
 .login-form p a,.signup-form  p a{
     color: var(--secondary-color);
 }
-
+.test-btn{
+    cursor: pointer;
+    font-size: 1.8rem;
+}
 

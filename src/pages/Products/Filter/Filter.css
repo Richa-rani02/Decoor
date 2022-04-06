@@ -2,6 +2,7 @@
   display: flex;
  align-items: center;
  justify-content: center;
+
 }
 .clear-btn{
   margin-left: auto;
@@ -11,6 +12,8 @@
   font-weight: 500;
   padding: 8px ;
   border-radius: 5px;
+  background-color: rgb(36, 76, 76,0.2) ;
+  cursor:pointer;
 }
 .clear-btn:hover{
 background-color: rgba(0, 0, 0, 0.12);
@@ -29,6 +32,7 @@ background-color: rgba(0, 0, 0, 0.12);
     font-weight: 600;
     font-family: 'Raleway', sans-serif;
     font-size: 1.8rem;
+    display: block;
   }
   .filter-block{
     display:flex;
@@ -113,7 +117,6 @@ background-color: rgba(0, 0, 0, 0.12);
  .category_filterbox input[type="checkbox"]{
   -webkit-transform: scale(1.2);
 }
-
 
 
 /* custom radio button */

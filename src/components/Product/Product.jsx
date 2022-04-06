@@ -1,8 +1,9 @@
 import { useAuth } from "../../context/authContext";
 import { useStateContext } from "../../context/stateContext";
 import "./Product.css";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {AiOutlineShopping} from "react-icons/ai";
+import { AiOutlineShopping } from "react-icons/ai";
 import { addToWishlist, removefromwishlist, addToCart, removeFromCart } from "../../utils/getDataFromServer";
 import { isInList } from "../../utils/helper";
 const Product = ({ product }) => {
@@ -16,7 +17,7 @@ const Product = ({ product }) => {
 
     } = product;
     let navigate = useNavigate();
-
+    const [loading, setLoading] = useState(false);
     const { authState: { token } } = useAuth();
     const { state: { wishlist, productInCart }, dispatch } = useStateContext();
 
@@ -35,7 +36,7 @@ const Product = ({ product }) => {
     const CartHandler = () => {
         token ? isInCart
             ? navigate("/cart")
-            : addToCart(token, dispatch, product)
+            : addToCart(token, dispatch, product,setLoading)
             : navigate("/signin")
     }
     return (
@@ -58,9 +59,9 @@ const Product = ({ product }) => {
                 </div>
                 <div className="product-btn-container">
                     <button className="btn btn-solid-primary btn-lg flex-display" onClick={() => CartHandler()}>
-                        {isInCart?<span>Go to Cart</span>:<span>Add to Cart</span>}
-                        {/* <i className="fas fa-shopping-cart"></i> */}
-                        <AiOutlineShopping className="add-btn-icon"/>
+                        {isInCart ? <span>Go to Cart</span> : <span>Add to Cart</span>}
+
+                        <AiOutlineShopping className="add-btn-icon" />
                     </button>
                 </div>
             </div>

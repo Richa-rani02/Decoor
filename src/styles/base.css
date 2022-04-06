@@ -56,6 +56,7 @@ body {
     --card-rating: #03a685;
     --light-grey: #779;
     --highlight-text-color: #ff3e6c;
+    --error-text-color:#9C42FF;
 
     /* ************************ spacing************************* */
     --spacing-1x: 1px;
@@ -267,12 +268,13 @@ hr {
         z-index: 3;
         position: absolute;
         background-color: var(--white);
-        left: -101%
+        left: -101%;
+        transition: left 1s ease-out;
     }
 
     .product_page .filter__wrap.active {
         left: 0;
-        transition: .4s linear;
+        transition: left 0.5s ease-out;
     }
 
     .product_page .filter__responsive {

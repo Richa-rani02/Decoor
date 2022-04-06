@@ -6,7 +6,7 @@ export const signinUrl="/api/auth/login";
 export const productUrl="/api/products";
 export const wishlistUrl="/api/user/wishlist";
 export const cartUrl="/api/user/cart";
-//constants
+//product, category load, filter
 
 export const LOAD_CATEGORY="LOAD_CATEGORY";
 export const ERROR="ERROR";
@@ -18,13 +18,8 @@ export const SORT_BY_PRICE="SORT_BY_PRICE";
 export const FILTER_BY_RATING="FILTER_BY_RATING";
 export const PRICE_RANGE="PRICE_RANGE";
 export const CLEAR_ALL="CLEAR_ALL";
-export const FIRST_NAME="FIRST_NAME";
-export const LAST_NAME="LAST_NAME";
-export const EMAIL="EMAIL";
-export const PASSWORD="PASSWORD";
-export const TOKEN="TOKEN";
-export const LOAD_USER="LOAD_USER";
-export const  LOGOUT="LOGOUT";
+
+//products
 export const  LOAD_WISHLIST="LOAD_WISHLIST";
 export const  ADD_TO_WISHLIST="ADD_TO_WISHLIST";
 export const REMOVE_FROM_WISHLIST="REMOVE_FROM_WISHLIST";
