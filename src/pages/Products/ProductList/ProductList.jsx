@@ -2,10 +2,15 @@ import "./ProductList.css";
 import {Product} from "../../../components/index";
 import { useStateContext } from "../../../context/stateContext";
 import {getFilteredProducts} from "../../../utils/helper";
+import { useLocation } from "react-router-dom";
+import { EmptyPage } from "../../index";
 const ProductList=({setActive})=>{
     const {state:{ products,filters},}=useStateContext();
     const filteredProducts=getFilteredProducts(products,filters);
+    const location = useLocation();
     return(
+        <>
+        {filteredProducts.length>0?
         <>
         <div className="alert-container bottom-gutter-sm">
           <div className="left-side">
@@ -24,6 +29,10 @@ const ProductList=({setActive})=>{
          ))}
           
          </div>
+         </>
+         :
+         <EmptyPage path={location.pathname}/>
+        }
         </>
     )
 }

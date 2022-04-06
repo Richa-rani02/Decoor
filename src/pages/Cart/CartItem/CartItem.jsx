@@ -67,7 +67,7 @@ const CartItem = ({ product }) => {
             </div>
             <div className={`modal-container ${isActive && 'modal-active'} `}>
                 <div className="popup">
-                    <div class="content flex-col">
+                    <div className="content flex-col">
                         <h4 className="large-text bottom-gutter-sm ">Delete</h4>
                         <p className="sub-p medium-text"> Are you sure you want to move this item from cart?</p>
                     </div>

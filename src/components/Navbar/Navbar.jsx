@@ -22,6 +22,7 @@ const Navbar = () => {
         });
         authDispatch({ type: authActions.LOGOUT })
         setProfileActive(prev=>!prev);
+        navigate("/");
 
     }
    return (
@@ -33,7 +34,6 @@ const Navbar = () => {
                 <Link id="nav-home" to="/">Home</Link>
                 {location.pathname === '/' && <><a id="nav-features" href="#features" >Features</a><a id="nav-products" href="#products">Products</a></>}
             </nav>
-            {/* () => setSearchActive(prevCheck => !prevCheck) */}
             <div className="nav-icons">
                 <div className="fas fa-bars " id="menu-btn"></div>
                 {location.pathname === '/products' && <div className="fas fa-search" id="search-btn" onClick={() => setSearchActive(prevCheck => !prevCheck)}></div>}

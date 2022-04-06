@@ -28,11 +28,11 @@ const Checkout = () => {
 
             </div>
             <hr />
-            <div class="display-flex-row">
+            <div className="display-flex-row">
                 <h3>TOTAL AMOUNT</h3>
-                <h3 class="ml-auto">{price - discount}</h3>
+                <h3 className="ml-auto">{price - discount}</h3>
             </div>
-            <a href="#" class="btn btn-solid-primary btn-lg">CHECKOUT</a>
+            <a href="#" className="btn btn-solid-primary btn-lg">CHECKOUT</a>
         </>
     )
 }
