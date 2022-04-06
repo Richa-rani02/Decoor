@@ -3,10 +3,12 @@ import { Route, Routes } from "react-router-dom";
 import {Navbar,Footer} from "./components/index";
 import { Home,Products,SignIn,SignUp,Wishlist,Cart } from "./pages/index";
 import Mockman from "mockman-js";
+import { ToasterWrapper } from "./utils/ToastWrapper";
 function App() {
   return (
     <main>
       <Navbar />
+      <ToasterWrapper/>
       <div className="main-section">
       <Routes>
         <Route path="/" element={<Home />} />

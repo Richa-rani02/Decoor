@@ -2,7 +2,6 @@ import { FIRST_NAME, LAST_NAME, EMAIL, PASSWORD, TOKEN, LOAD_USER, LOGOUT } from
 import { authActions } from "../utils/actions";
 export const authReducer = (state, action) => {
     const { type, payload } = action
-    console.log(payload);
     switch (type) {
         case authActions.AUTH:
             return {
@@ -16,6 +15,11 @@ export const authReducer = (state, action) => {
                 ...state,
                 userDetails: null, token: null
             };
+        case authActions.AUTHERROR:
+            return{
+                ...state,
+                error:payload
+            }    
         default:
             return state
 

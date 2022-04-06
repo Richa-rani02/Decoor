@@ -1,6 +1,5 @@
 export const authActions = {
-    LOADING: "LOADING",
-    ERROR: "ERROR",
+    AUTHERROR: "ERROR",
     LOGOUT: "LOGOUT",
     AUTH: "AUTH",
 }

@@ -11,9 +11,8 @@ const SignUp = () => {
 
     const signupHandler = (e) => {
         e.preventDefault();
-        signupOnServer(formValue, authDispatch);
+        signupOnServer(formValue,authDispatch,navigate);
         setFormValue(initialFormValues);
-        //  navigate('/');
     }
 
     const changeHandler=(e)=>{

@@ -13,9 +13,8 @@ const SignIn = () => {
 
     const loginHandler = (e) => {
         e.preventDefault();
-        loginToServer(formValue, authDispatch);
+        loginToServer(formValue, authDispatch,navigate);
         setFormValue(initialFormValues);
-        // navigate('/');
     }
     const loadTestCred = () => {
         setFormValue(testLogin);
