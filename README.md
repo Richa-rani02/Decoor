@@ -10,21 +10,20 @@ This application can be  accessed using the link  [DecorKart](https://decor-kart
 
 ---
 
-## 📕 Table of Contents
+## Table of Contents
 
 - [About](#-about)
 - [Features](#-features)
-- [Get Started](#-get-started)
 
 ---
 
-## 📖 About
+##  About
 
 DecorKart is an e-commerce platform for the Home decor products. You can buy products of your favourite category.
 
 ---
 
-## 🚀 Features
+##  Features
 
 From **Navbar**
 
