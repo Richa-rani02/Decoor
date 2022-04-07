@@ -69,5 +69,8 @@ From **WishList** page
 - remove Items from your WishList 
 - add Items in your Cart
 
+##Demo
+
+![Ecommdemo](https://user-images.githubusercontent.com/49235266/162108230-ca55a5e0-7820-441f-b07e-5c56cb39a520.gif)
 
 
