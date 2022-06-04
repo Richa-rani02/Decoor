@@ -1,9 +1,7 @@
 import { ProtectedRoutes } from "./ProtectedRoutes";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
 import Mockman from "mockman-js";
-import { useAuth } from "../context/auth-context";
 import { Home, Products, SignIn, SignUp, Wishlist, Cart, ErrorPage, Checkout } from "../pages/index";
-import Mockman from "mockman-js";
 export const AllRoutes = () => {
     return (
         <Routes>
@@ -26,6 +24,7 @@ export const AllRoutes = () => {
                     <Checkout />
                 </ProtectedRoutes>
             } />
+            <Route path="/mock" element={<Mockman />} />
             <Route path="/*" element={<ErrorPage />} />
         </Routes>
     )
