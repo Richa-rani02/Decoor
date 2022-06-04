@@ -1,11 +1,19 @@
 import "./Checkout.css";
 import { AddressCard } from "./AddressCard/AddressCard";
 import { AddressFormModal } from "./AddressFormModal/AddressFormModal";
-import {useState} from "react";
+import { useStateContext } from "../../context/stateContext";
+import {useState,useEffect} from "react";
+import { getAddress } from "../../utils/getDataFromServer";
+import { useAuth } from "../../context/authContext";
 export const Checkout=()=>{
   const [addressModalActive,setAddressModalActive]=useState(false);
-return(
+  const{state:{address},dispatch} =useStateContext();
+  const {authState:{token}}=useAuth();
 
+useEffect(()=>{
+getAddress(token,dispatch);
+},[])
+return(
     <>
    <h3 className="heading-3 center-text top-gutter-md">CHECKOUT</h3>
     <section className="order-page">
@@ -13,9 +21,11 @@ return(
      <h4>Deliver to</h4>
        <div className="address-details">
            <div className="address-list">
-           <AddressCard/>
-           </div>
+          {address.map((addressList)=>(
+            <AddressCard addressDetail={addressList}/>
+          ))}   
            
+           </div>
        </div>
        <button className="add-address" onClick={()=>setAddressModalActive(prev=>!prev)}>Add New Address +</button>
      </article>

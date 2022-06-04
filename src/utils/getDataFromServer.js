@@ -1,4 +1,4 @@
-import { categoryUrl, LOAD_CATEGORY, productUrl,ERROR, LOAD_PRODUCTS, signinUrl, signupUrl, wishlistUrl, TOKEN, UPDATE_QTY, ADD_TO_WISHLIST, REMOVE_FROM_WISHLIST, cartUrl, ADD_TO_CART, REMOVE_FROM_CART, INC_QTY,ADDRESS} from "../utils/constants";
+import { categoryUrl, LOAD_CATEGORY, productUrl,addressUrl,ERROR, LOAD_PRODUCTS, signinUrl, signupUrl, wishlistUrl, TOKEN, UPDATE_QTY, ADD_TO_WISHLIST, REMOVE_FROM_WISHLIST, cartUrl, ADD_TO_CART, REMOVE_FROM_CART, INC_QTY,ADDRESS} from "../utils/constants";
 import axios from "axios";
 import { authActions } from "./actions";
 import toast from "react-hot-toast";
@@ -205,7 +205,7 @@ export const loginToServer = async (userDetails, authDispatch, navigate) => {
 
 export const addAddress = async (token, dispatch, address) => {
     try {
-        const response = await axios.post(wishlistUrl, {
+        const response = await axios.post(addressUrl, {
             address
         }, {
             headers: {
@@ -221,6 +221,25 @@ export const addAddress = async (token, dispatch, address) => {
     } catch (error) {
         toast.error("Some error occured :( .Try again!");
         console.log("error in adding address ")
+        dispatch({ type: ERROR, payload: error.response });
+    }
+}
+
+export const getAddress = async (token, dispatch) => {
+    try {
+        const response = await axios.get(addressUrl, {
+            headers: {
+                authorization: token
+            }
+        }
+        );
+        if (response.status === 200 || response.status === 201) {
+            dispatch({ type:ADDRESS, payload: response.data.address });
+        }
+    } catch (error) {
+        console.log(error);
+        toast.error("Some error occured :( .Try again!");
+        console.log("error in getting address ")
         dispatch({ type: ERROR, payload: error.response });
     }
 }
