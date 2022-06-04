@@ -6,6 +6,7 @@ export const signinUrl="/api/auth/login";
 export const productUrl="/api/products";
 export const wishlistUrl="/api/user/wishlist";
 export const cartUrl="/api/user/cart";
+export const addressUrl="/api/user/address"
 //product, category load, filter
 
 export const LOAD_CATEGORY="LOAD_CATEGORY";
@@ -28,4 +29,7 @@ export const REMOVE_FROM_CART="REMOVE_FROM_CART";
 export const UPDATE_QTY="UPDATE_QTY";
 export const INC_QTY="INC_QTY";
 export const DEC_QTY="DEC_QTY";
+
+// address
+export const ADDRESS="ADDRESS";
 
