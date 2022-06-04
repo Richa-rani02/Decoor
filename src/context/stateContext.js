@@ -9,6 +9,7 @@ const StateProvider = ({ children }) => {
         products: [],
         wishlist:[],
         productInCart:[],
+        address:[],
         isLoading: false,
         setError: "",
         filters: {

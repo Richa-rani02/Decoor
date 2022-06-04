@@ -1,4 +1,4 @@
-import { LOAD_CATEGORY, IS_LOADING, ERROR, LOAD_PRODUCTS, FILTER_BY_CATEGORY,ADD_TO_WISHLIST,REMOVE_FROM_WISHLIST, SORT_BY_PRICE, SEARCH_PRODUCT, FILTER_BY_RATING, PRICE_RANGE, CLEAR_ALL,ADD_TO_CART,REMOVE_FROM_CART,UPDATE_QTY } from "../utils/constants";
+import { LOAD_CATEGORY, IS_LOADING, ERROR, LOAD_PRODUCTS, FILTER_BY_CATEGORY,ADD_TO_WISHLIST,REMOVE_FROM_WISHLIST, SORT_BY_PRICE, SEARCH_PRODUCT, FILTER_BY_RATING, PRICE_RANGE, CLEAR_ALL,ADD_TO_CART,REMOVE_FROM_CART,UPDATE_QTY, ADDRESS } from "../utils/constants";
 export const stateReducer = (state, action) => {
     switch (action.type) {
         case IS_LOADING:
@@ -87,6 +87,11 @@ export const stateReducer = (state, action) => {
                 ...state,
                 filters: { ...state.filters, priceRange: action.payload }
             };
+            case ADDRESS:
+                return{
+                    ...state,
+                    address:[...action.payload]
+                }    
         case CLEAR_ALL:
             return {
                 ...state,

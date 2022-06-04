@@ -1,6 +1,7 @@
 import "./Checkout.css";
 import { useStateContext } from "../../../context/stateContext";
 import { priceDetails } from "../../../utils/helper";
+import {Link} from "react-router-dom";
 const Checkout = () => {
     const { state: { productInCart } } = useStateContext();
     const { totalqty, price, discount } = priceDetails(productInCart);
@@ -32,7 +33,7 @@ const Checkout = () => {
                 <h3>TOTAL AMOUNT</h3>
                 <h3 className="ml-auto">{price - discount}</h3>
             </div>
-            <a href="#" className="btn btn-solid-primary btn-lg">CHECKOUT</a>
+            <Link to="/checkout" className="btn btn-solid-primary btn-lg">CHECKOUT</Link>
         </>
     )
 }
