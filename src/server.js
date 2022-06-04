@@ -63,6 +63,7 @@ export function makeServer({ environment = "development" } = {}) {
               _id: uuid(),
               name: "Richa",
               address: "CAB F-42 Bseb Colony,Patna ,Bihar 800025",
+              addresstype:"Home",
               mobile: "198765232",
             },
           ], })
