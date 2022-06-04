@@ -17,7 +17,6 @@ export const AddressFormModal = ({ isOpen, onClose }) => {
         setAddressDetail({ ...addressDetail, [e.target.name]: e.target.value })
     }
     const addAddressHandler = () => {
-        console.log(addressDetail);
         addAddress(token, dispatch, addressDetail)
         setAddressDetail("");
         onClose();
