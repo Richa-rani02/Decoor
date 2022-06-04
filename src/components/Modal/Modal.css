@@ -16,8 +16,10 @@
     position: fixed;
     padding: 1rem;
     width: 30%;
-    margin-top: 5rem;
+    max-height: 70%;
+    margin-top: 7rem;
     background: white;
+    overflow: scroll;
 }
 .modal-content .close-btn{
     position: absolute;

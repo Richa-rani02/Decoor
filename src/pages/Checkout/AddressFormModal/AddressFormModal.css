@@ -28,6 +28,9 @@ border-radius: 3px;
     font-weight: 500;
     color: var(--primary-color);
 }
+.address-form select{
+    padding: 10px;
+}
 .add-address-btn{
     border: none;
     padding:10px;
