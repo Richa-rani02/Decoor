@@ -7,3 +7,4 @@ export {Wishlist} from "./Wishlist/Wishlist";
 export {Cart} from "./Cart/Cart";
 export {EmptyPage} from "./Error/EmptyPage";
 export {ErrorPage} from "./Error/ErrorPage";
+export {Checkout} from "./Checkout/Checkout";
