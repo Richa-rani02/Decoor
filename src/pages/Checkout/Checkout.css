@@ -1,0 +1,55 @@
+.order-page{
+    display: flex;
+    width: 100vw;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.address-container{
+width: 55%;
+padding: 10px;
+}
+.add-address{
+    padding:10px;
+    margin-top: 1.5rem;
+    background-color: var(--secondary-color);
+    color: white;
+}
+.address-list{
+    max-height: 25rem;
+    overflow: scroll;
+    margin-top: 1.5rem;
+}
+.order-container{
+    width:40%;
+    padding: 10px;
+}
+.order-container .order-items{
+    border-radius: 5px;
+    border:2px solid var(--light-grey);
+    text-align: center;
+    padding: 10px;
+    margin-top: 1.5rem;
+}
+.order-items .items{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.order-items p{
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+.items span{
+    font-size: 1.5rem;
+}
+.order-btn{
+    width: 100%;
+}
+@media (max-width:594px) {
+.address-container{
+    width: 90%;
+}
+.order-container{
+    width: 90%;
+}
+}
