@@ -30,7 +30,7 @@ body {
     /* ******************colors****************** */
     
     --black-1:hsl(0, 0%, 100%);
-    --black-2:hsl(0, 0%, 98%);
+    --black-2:hsl(0, 0%, 99%);
     --black-3:hsl(0, 0%, 80%);
     --black-4:hsl(0, 0%, 35%);
     --black-5:hsl(0, 0%, 25%);
@@ -38,8 +38,10 @@ body {
     --black-7:hsl(0, 0%, 10%);
     --black-8:hsl(0, 0%, 0%);
     --brand-color-shade-1:hsl(229, 44%, 96%);
-    --brand-color-shade-2:#E3E6F4;
-    --brand-color-shade-3:#CBD0EC;
+    --brand-color-shade-2:hsl(229, 44%, 92%);
+    --brand-color-shade-3:hsl(231, 46%, 86%);
+    --brand-color-shade-4:hsl(231, 45%, 80%);
+    --brand-color-shade-4:hsl(231, 45%, 70%);
 
 
 
@@ -105,7 +107,11 @@ body {
     --z-index-3: 3;
 
 }
-
+.img-responsive{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
 .bottom-gutter-sm {
     margin-bottom: 1rem;
 }

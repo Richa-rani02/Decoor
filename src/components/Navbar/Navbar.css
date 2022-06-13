@@ -1,4 +1,4 @@
-.header{
+/* .header{
     display: flex;
     z-index:5;
     align-items: center;
@@ -137,4 +137,39 @@ background-color: var(--highlight-text-color);
     align-items: center;
     color: var(--text-primary-color);
     cursor: pointer;
+} */
+
+header{
+    position: sticky;
+    background-color:var(--black-2);
+    display: flex;
+    padding:var(--spacing-2-5) var(--spacing-2);
+    align-items: center;
+    width: 100%;
+    height: 8rem;
+    z-index:5;
+    top: 0;
+    left: 0;
+    right: 0;
+    justify-content: space-between;
+}
+.left-area{
+    padding:10px;
+}
+.left-area .logo{
+width: 10rem;
+height:8rem;
+}
+.header-icon{
+    color: var(--black-5);
+}
+.nav-icons{
+    display: flex;
+    align-items: center;
+    gap:2rem;
+    padding: 10px;
+}
+.icon-badge{
+    padding: 10px;
+    background-color:var(--brand-color-shade-4);
 }
