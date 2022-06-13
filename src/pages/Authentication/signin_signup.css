@@ -5,49 +5,55 @@
     position: relative;
     overflow: hidden;
 }
-
+.route-section{
+    background-color: var(--brand-color-shade-2);
+    padding: 2.3rem;
+    margin-top: 10px;
+}
+.route-section span{
+    color: var(--brand-color-shade-6);
+}
 .login ,.signup {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center; 
-    
+    flex-direction: column;
 }
 
 .login-form ,.signup-form {
     width: 35rem;
-    padding:var(--spacing-2);
+    padding:var(--spacing-1);
     background-color: var(--card-bg-color);
-    border-radius: var(--spacing-8x);
+    border-radius: var(--spacing-5x);  
 }
 .login-form h3, .signup-form h3{
     font-size: 2.5rem;
+    text-align: center;
     text-transform: uppercase;
-    color: var(--text-primary-color);
-}
-
-.login-form .box , .signup-form .box{
-    width: 100%;
-    background-color: var(--bg-color);
-    padding:var(--spacing-1-2);
-    margin: var(--spacing-1) 0;
-    border-radius: var(--spacing-0-5);
-    font-size: 1.6rem;
-    color:var(--text-primary-color);
+    color: var(--black-5);
+    margin-bottom: 3rem;
 }
 
 .login-form p, .signup-form p{
-    font-size: 1.4rem;
-    padding:var(--spacing-0-5) 0;
+    font-size: 1.7rem;
+    padding:var(--spacing-0-4) 0;
     color:var(--light-color);
     text-align: left;
+    margin-bottom: 1.5rem;
 }
-
-.login-form p a,.signup-form  p a{
-    color: var(--secondary-color);
+.link-text-primary{
+color: var(--brand-color-shade-6);
 }
 .test-btn{
     cursor: pointer;
-    font-size: 1.8rem;
+    font-size: 1.9rem;
+    padding: 1rem;
+    text-align: center;
+    color: var(--brand-color-shade-6);
+    transition: 0.5s ease-in-out;
 }
 
+.test-btn:hover,
+.test-btn:focus {
+        transform: scale(1.2);
+    }
