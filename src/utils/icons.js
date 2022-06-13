@@ -1,0 +1,1 @@
+export {AiOutlineShoppingCart} from "react-icons/ai";

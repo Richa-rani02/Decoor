@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: space-between;
     padding: var(--spacing-2) 9%;
-    background-color: var(--nav-bg);
+    background-color:var(--brand-color-shade-1);
     position: sticky;
     top: 0;
     left: 0;
@@ -41,8 +41,7 @@ background-color: var(--highlight-text-color);
     width: 3.5rem;
     line-height: 3.5rem;
     border-radius: 50%;
-    background: var(--bg-color);
-    color:var(--card-heading-color);
+    color:var(--black-7);
     font-size: 2rem;
     margin-left: var(--spacing-5x);
     cursor: pointer;
