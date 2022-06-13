@@ -36,7 +36,7 @@ const Navbar = () => {
             </div>
            </div>
               <div className="nav-icons">
-                 <Link to={token ? "/cart" : "/signin"}>
+                 {/* <Link to={token ? "/cart" : "/signin"}>
                <span className="badge-container icon-col">
                          <AiOutlineShoppingCart size={28} className="header-icon"/>
                          <span className="badge icon-badge">{state.productInCart.length}</span>
@@ -52,8 +52,22 @@ const Navbar = () => {
                      <span className="badge-container icon-col">
                          <BiUser  size={28} className="header-icon"/>
                      </span>
-                 </Link>
-                 {/* <div className="far fa-user" id="profile-btn" onClick={() => setProfileActive(prevCheck => !prevCheck)}></div> */}
+                 </Link> */}
+                        <Link to={token ? "/cart" : "/signin"}>
+                    <span className="badge-container icon-col">
+                        <div className="fas fa-shopping-cart" id="cart-btn"></div>
+                         <span className="badge icon-badge">{state.productInCart.length}</span>
+                    </span>
+               </Link>
+               <Link to={token ? "/wishlist" : "/signin"}>
+                    <span className="badge-container icon-col">
+                        <div className="fas fa-heart" id="wishlist-btn"></div>
+                       <span className="badge icon-badge">{state.wishlist.length}</span>
+                     </span>
+               </Link>
+               <Link to={token ? "/signin" : "/signin"}>
+                <div className="fas fa-user" id="profile-btn"></div>
+             </Link>
              </div>
        </header>
         // <header className="header">

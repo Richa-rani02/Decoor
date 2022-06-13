@@ -40,8 +40,9 @@ body {
     --brand-color-shade-1:hsl(229, 44%, 96%);
     --brand-color-shade-2:hsl(229, 44%, 92%);
     --brand-color-shade-3:hsl(231, 46%, 86%);
-    --brand-color-shade-4:hsl(231, 45%, 80%);
     --brand-color-shade-4:hsl(231, 45%, 70%);
+    --brand-color-shade-5:hsl(231, 45%, 80%);
+    --brand-color-shade-6:hsl(231, 45%, 50%);
 
 
 
@@ -237,10 +238,13 @@ hr {
     .header {
         padding: var(--spacing-2);
     }
-
+/* 
     section {
         padding: var(--spacing-2);
-    }
+    } */
+    .section {
+    padding: var(--spacing-2) 9%;
+}
 
 }
 

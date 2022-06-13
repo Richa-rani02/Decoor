@@ -4,11 +4,11 @@ import { FaTwitter, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const Footer = () => {
   return (
-    <section className="footer top top-gutter-xl">
+    <section className="footer top top-gutter-xl section">
       <div className="footer-container">
         <div className="box flex-col">
           <div className="footer-logo">
-            <img src="../Assets/DECOR_KART.png" className="icon-responsive" alt="logo"></img>
+            <img src="https://res.cloudinary.com/dgomw715r/image/upload/v1655122821/ProjectImages/ecomm2_r6nyji.png" className="img-responsive" alt="logo"></img>
           </div>
         </div>
         <div className="box flex-col">

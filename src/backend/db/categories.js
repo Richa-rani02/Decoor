@@ -8,17 +8,17 @@ export const categories = [
   {
     _id: uuid(),
     categoryName: "Macrame",
-    image:"https://res.cloudinary.com/dgomw715r/image/upload/v1647577729/ProjectImages/featuremacrame_xmaodp.png",
+    image:"https://res.cloudinary.com/dgomw715r/image/upload/v1655137154/ProjectImages/living-room_spfgxn.jpg",
   },
   {
     _id: uuid(),
     categoryName: "Plants",
-    image:"https://res.cloudinary.com/dgomw715r/image/upload/v1647577729/ProjectImages/featureplants_byrfgl.jpg",
+    image:"https://res.cloudinary.com/dgomw715r/image/upload/v1655137154/ProjectImages/dining-room_ttczqa.jpg",
   },
   {
     _id: uuid(),
     categoryName: "DreamCatcher",
-    image:"https://res.cloudinary.com/dgomw715r/image/upload/v1647577729/ProjectImages/featuredream_zhaeux.png",
+    image:"https://res.cloudinary.com/dgomw715r/image/upload/v1655137154/ProjectImages/kitchen-image_cg8suf.jpg",
    
   },
 ];

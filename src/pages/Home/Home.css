@@ -1,8 +1,11 @@
-
-section {
+.main-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+.section {
     padding: var(--spacing-2) 9%;
 }
-
 .products-grid{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));

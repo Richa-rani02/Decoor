@@ -7,6 +7,8 @@ const Category = ({ category }) => {
     return (
         <>
             <div className="features">
+
+               
                 <Link to="/products">
                     <figure key={category.categoryName}
                     onClick={()=>dispatch({
@@ -15,13 +17,19 @@ const Category = ({ category }) => {
                             value: category.categoryName.toLowerCase()
                         }
                     })}>
+                    {/* <>    */}
                     <img src={category.image} alt={category.categoryName} />
                     <div className="feature__content">
-                        <h3>{category.categoryName}</h3>
+                        {/* <h3>{category.categoryName}</h3> */}
                     </div>
+                    <div className="category-name">
+                    <h3 >{category.categoryName}</h3>
+                     <p>Collections</p>
+                    </div>
+                   
                     </figure>
+                   
                 </Link>
-
             </div>
         </>
     );
