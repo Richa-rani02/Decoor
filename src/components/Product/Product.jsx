@@ -46,6 +46,7 @@ const Product = ({ product }) => {
                     <img src={image} alt={title} className="img-responsive" />
                 </div>
                 <span className="card-rating">{rating}★ | 5</span>
+                <span className="card-tag">Bestseller</span>
                 <div className="product-desc">
                     <span className="product-heading"><strong>{title}</strong><a onClick={() => wishlistHandler()}>
                         {

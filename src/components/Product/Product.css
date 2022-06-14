@@ -33,6 +33,21 @@
     top:57%;
     left:  var(--spacing-5x);
 }
+.product-box .card-tag{
+ 
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  background-color:var(--highlight-text-color);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-4x);
+  border-radius: var(--spacing-3x);
+  font-size: 1.3rem;
+  top:2%;
+  right:  var(--spacing-3x);
+}
 
 .product-desc {
     padding: var(--spacing-10x) var(--spacing-1-5);
