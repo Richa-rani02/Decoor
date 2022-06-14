@@ -23,15 +23,6 @@ const SignUp = () => {
         <div className="auth__page">
             <RouteSection path={"Signup"} />
             <section className="auth">
-                {/* <form action="" className="signup-form top-gutter-lg" onSubmit={e => e.preventDefault()}>
-                    <h3>Sign Up</h3>
-                    <input type="email" placeholder="Enter Email" name="email" value={formValue.email} className="box" required onChange={changeHandler} />
-                    <input type="password" placeholder="Enter Password" name="password" value={formValue.password} className="box" required onChange={changeHandler} />
-                    <input type="text" placeholder="Enter FirstName" name="firstName" value={formValue.firstName} className="box" required onChange={changeHandler} />
-                    <input type="text" placeholder="Enter LastName" name="lastName" value={formValue.lastName} className="box" required onChange={changeHandler} />
-                    <p>Already have an account  <Link to="/signin" className="link-text-primary" >Login</Link></p>
-                    <button type="submit" value="signup" className="btn btn-solid-primary btn-lg btn-rounded-5" >SIGNUP</button>
-                </form> */}
                 <form className="auth-form top-gutter-lg" onSubmit={e => e.preventDefault()}>
                     <h3>Sign Up</h3>
                     <div className="auth-error">
@@ -41,10 +32,6 @@ const SignUp = () => {
                     <InputBox labelName="Password" type="password" name="password" value={formValue.password} onChange={changeHandler} required />
                     <InputBox labelName="firstName" type="text" name="firstName" value={formValue.userName} onChange={changeHandler} required />
                     <InputBox labelName="lastName" type="text" name="lastName" value={formValue.userName} onChange={changeHandler} required />
-                    {/* <input type="email" placeholder="Enter Email" name="email" value={formValue.email} className="box" required onChange={changeHandler} />
-                    <input type="password" placeholder="Enter Password" name="password" value={formValue.password} className="box" required onChange={changeHandler} />
-                    <input type="text" placeholder="Enter FirstName" name="firstName" value={formValue.firstName} className="box" required onChange={changeHandler} />
-                    <input type="text" placeholder="Enter LastName" name="lastName" value={formValue.lastName} className="box" required onChange={changeHandler} /> */}
                     <p>Already have an account  <Link to="/signin" className="link-text-primary" >Login</Link></p>
                     <button value="signup" className="btn btn-solid-primary btn-lg btn-rounded-5" onClick={signupHandler} >SIGNUP</button>
                 </form>
