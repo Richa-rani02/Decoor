@@ -12,8 +12,7 @@ const SignIn = () => {
     let navigate = useNavigate();
     const { authDispatch } = useAuth();
 
-    const loginHandler = (e) => {
-        e.preventDefault();
+    const loginHandler = () => {
         loginToServer(formValue, authDispatch, navigate);
         setFormValue(initialFormValues);
     }
@@ -26,9 +25,9 @@ const SignIn = () => {
     }
 
     return (
-        <div className="signin__page">
+        <div className="auth__page">
             <RouteSection path={"Login"} />
-            <section className="login">
+            <section className="auth">
                 {/* <form action="" className="login-form top-gutter-lg" onSubmit={loginHandler}>
                     <h3>login</h3>
                     <input type="email" name="email" placeholder="Enter Email" value={formValue.email} className="box" required onChange={ChangeHandler} />
@@ -39,12 +38,15 @@ const SignIn = () => {
                     <h4 className="top-gutter-sm test-btn" onClick={loadTestCred}>Load test credential</h4>
                 </form> */}
                 
-                <form action="" className="login-form top-gutter-lg" onSubmit={e => e.preventDefault()}>
+                <form  className="auth-form top-gutter-lg" onSubmit={e => e.preventDefault()}>
                 <h3>login</h3>
+                <div className="auth-error">
+                        error
+                    </div>
                     <InputBox labelName="Email" type="email" name="email" value={formValue.email} onChange={changeHandler} required />
                     <InputBox labelName="Password" type="password" name="password" value={formValue.password} onChange={changeHandler} required />
                     <p>Don't have an account <Link to="/signup" className="link-text-primary">create new</Link></p>
-                    <button type="submit" value="login" className="btn btn-solid-primary btn-lg btn-rounded-5" onClick={loginHandler}>Login</button>
+                    <button  value="login" className="btn btn-solid-primary btn-lg btn-rounded-5 auth-btn" onClick={loginHandler}>Login</button>
                     <h4 className="top-gutter-sm test-btn" onClick={loadTestCred}>Load test credential</h4>
                 </form>
             </section>

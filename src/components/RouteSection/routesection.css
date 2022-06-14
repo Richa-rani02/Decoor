@@ -5,4 +5,5 @@
 }
 .route-section span{
     color: var(--brand-color-shade-6);
+    cursor: pointer;
 }

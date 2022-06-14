@@ -1,6 +1,7 @@
 
 .input-group{
     margin-bottom: 10px;
+    width: 100%;
 }
 .input-group__label{
     color:var(--black-6);
@@ -11,11 +12,11 @@
 }
 .input-group__input{
     border: none;
-        width: 95%;
+        width: 100%;
         padding: 1.3rem;
         background-color: inherit;
-        background-color:var(--brand-color-shade-2);
-        border-bottom:2px solid var(--brand-color-shade-6);
+        border-radius: 3px;
+        border: 1px solid var(--brand-color-shade-6);
         font-size: var(--spacing-1-5);
 }
 .input-group__input:focus{
