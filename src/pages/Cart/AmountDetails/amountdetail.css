@@ -1,0 +1,88 @@
+/* .checkout-container h2 {
+    font-size: 2rem;
+    padding: 0.75rem 0;
+    text-transform: uppercase;
+}
+
+.checkout-container h3 {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+
+hr {
+    border: var(--spacing-1x) solid var(--light-color)
+}
+
+.checkout-details {
+    padding: var(--spacing-1-2) 0;
+    font-size: 1.4rem;
+}
+
+.display-flex-row {
+    display: flex;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+
+.checkout-details span {
+    padding-bottom: var(--spacing-10x);
+}
+
+.checkout-container .btn {
+    margin-top: var(--spacing-2-5);
+    margin-bottom: 0;
+} */
+
+.price_details {
+    background-color: var(--black-1);
+    margin: 0 auto;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.price_details .item, .total, .coupon {
+    display: flex;
+    justify-content: space-between;
+}
+
+.price_details .item {
+    margin-bottom: 10px;
+}
+.discount-text{
+    color: var(--card-rating);
+}
+.price_details .coupon {
+    margin-top: 2rem;
+}
+
+.price_details .total {
+    padding-top: 1rem;
+    border-top: 1px solid var(--black-3);
+    font-weight: 700;
+    margin-top: 2rem;
+}
+
+/* .price_details .coupon a {
+    color: #ff3f6c;
+    background-color: #efefef;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.price_details .coupon a:hover {
+    font-weight: 700;
+} */
+
+.checkout {
+    padding:var(--spacing-10x) var(--spacing-1-5);
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.checkout_btn{
+    width: 100%;
+    display: block;
+}

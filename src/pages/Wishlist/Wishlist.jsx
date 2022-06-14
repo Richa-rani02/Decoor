@@ -10,10 +10,10 @@ const Wishlist = () => {
 
     return (
         <>
+          <RouteSection path={"Wishlist"}/>
             {wishlist.length > 0 ?
 
                 <> 
-                <RouteSection path={"Wishlist"}/>
                     <section className="products section" id="products">
                         <div className="products-grid top-gutter-sm">
                             {wishlist.map((item) => (
