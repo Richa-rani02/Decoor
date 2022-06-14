@@ -53,6 +53,7 @@ const Navbar = () => {
                          <BiUser  size={28} className="header-icon"/>
                      </span>
                  </Link> */}
+                          {location.pathname === '/products' && <div className="fas fa-search" id="search-btn" onClick={() => setSearchActive(prevCheck => !prevCheck)}></div>}
                         <Link to={token ? "/cart" : "/signin"}>
                     <span className="badge-container icon-col">
                         <div className="fas fa-shopping-cart" id="cart-btn"></div>
@@ -68,6 +69,11 @@ const Navbar = () => {
                <Link to={token ? "/signin" : "/signin"}>
                 <div className="fas fa-user" id="profile-btn"></div>
              </Link>
+             <form action="" className={`search-form ${searchActive && 'active'}`}>
+                <input type="search" id="search-box" placeholder="search here..."
+                    value={state.searchProduct} onChange={(e) => dispatch({ type: SEARCH_PRODUCT, payload: e.target.value })} />
+                <label htmlFor="search-box" className="fas fa-search"></label>
+            </form>
              </div>
        </header>
         // <header className="header">
@@ -91,11 +97,7 @@ const Navbar = () => {
         //         </Link>
         //         <div className="far fa-user" id="profile-btn" onClick={() => setProfileActive(prevCheck => !prevCheck)}></div>
         //     </div>
-        //     <form action="" className={`search-form ${searchActive && 'active'}`}>
-        //         <input type="search" id="search-box" placeholder="search here..."
-        //             value={state.searchProduct} onChange={(e) => dispatch({ type: SEARCH_PRODUCT, payload: e.target.value })} />
-        //         <label htmlFor="search-box" className="fas fa-search"></label>
-        //     </form>
+        
 
         //     <div className={`profile-page ${profileActive && 'active'}`}>
         //         <div className="profile-container">

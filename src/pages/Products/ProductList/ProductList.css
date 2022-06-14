@@ -6,6 +6,7 @@
     cursor: pointer;
     align-items: center;
     justify-content: center;
+    margin-top: 5rem;
 }
 
 .alert-container{
@@ -16,8 +17,3 @@
   .right-side{
   width: auto;
    }
-.alert{
-    z-index: 1000;
-    position: absolute;
-}
-
