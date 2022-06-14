@@ -43,7 +43,7 @@ const Product = ({ product }) => {
         <>
             <div className="product-box">
                 <div className="image">
-                    <img src={image} alt={title} className="img-responsive" />
+                    <img src={image} alt={title} className="img-responsive"/>
                 </div>
                 <span className="card-rating">{rating}★ | 5</span>
                 <span className="card-tag">Bestseller</span>

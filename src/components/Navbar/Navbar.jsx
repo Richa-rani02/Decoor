@@ -36,23 +36,6 @@ const Navbar = () => {
             </div>
            </div>
               <div className="nav-icons">
-                 {/* <Link to={token ? "/cart" : "/signin"}>
-               <span className="badge-container icon-col">
-                         <AiOutlineShoppingCart size={28} className="header-icon"/>
-                         <span className="badge icon-badge">{state.productInCart.length}</span>
-                 </span>
-                 </Link>
-                 <Link to={token ? "/wishlist" : "/signin"}>
-                     <span className="badge-container icon-col">
-                         <FiHeart  size={28} className="header-icon"/>
-                        <span className="badge icon-badge">{state.wishlist.length}</span>
-                     </span>
-                 </Link>
-                 <Link to={token ? "/wishlist" : "/signin"}>
-                     <span className="badge-container icon-col">
-                         <BiUser  size={28} className="header-icon"/>
-                     </span>
-                 </Link> */}
                           {location.pathname === '/products' && <div className="fas fa-search" id="search-btn" onClick={() => setSearchActive(prevCheck => !prevCheck)}></div>}
                         <Link to={token ? "/cart" : "/signin"}>
                     <span className="badge-container icon-col">
@@ -76,50 +59,6 @@ const Navbar = () => {
             </form>
              </div>
        </header>
-        // <header className="header">
-        //     <div className="logo">
-        //         <Link to="/" className="logo">DECOR<span className="small-text ">KART</span> </Link>
-        //     </div>
-        //     <div className="nav-icons">
-        //         {location.pathname === '/products' && <div className="fas fa-search" id="search-btn" onClick={() => setSearchActive(prevCheck => !prevCheck)}></div>}
-        //         <Link to={token ? "/cart" : "/signin"}>
-        //             <span className="badge-container icon-col">
-        //                 <AiOutlineShoppingCart size={26}/>
-        //                 {/* <div className="far fa-shopping-cart" id="cart-btn"></div> */}
-        //                 <span className="badge icon-badge">{state.productInCart.length}</span>
-        //             </span>
-        //         </Link>
-        //         <Link to={token ? "/wishlist" : "/signin"}>
-        //             <span className="badge-container icon-col">
-        //                 <div className="far fa-heart" id="wishlist-btn"></div>
-        //                 <span className="badge icon-badge">{state.wishlist.length}</span>
-        //             </span>
-        //         </Link>
-        //         <div className="far fa-user" id="profile-btn" onClick={() => setProfileActive(prevCheck => !prevCheck)}></div>
-        //     </div>
-        
-
-        //     <div className={`profile-page ${profileActive && 'active'}`}>
-        //         <div className="profile-container">
-
-        //             <div className="profile-items">
-        //                 <i className="fas fa-user-circle fa-lg"></i>
-        //                 <h3>My profile</h3>
-        //             </div>
-        //             {token ? (
-        //                 <div className="profile-items" onClick={() => logoutHandler()}>
-        //                     <i className="fas fa-sign-out-alt fa-lg"></i>
-        //                     <h3>Logout</h3>
-        //                 </div>
-        //             ) : (<div className="profile-items" onClick={() => navigate("/signin")}>
-
-        //                 <i className="fas fa-sign-in-alt fa-lg"></i>
-        //                 <h3>Login</h3>
-        //             </div>)}
-
-        //         </div>
-        //     </div>
-        // </header>
     );
 };
 
