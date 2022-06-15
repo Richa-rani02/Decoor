@@ -6,11 +6,9 @@ import { SEARCH_PRODUCT } from "../../utils/constants";
 import { useStateContext } from "../../context/stateContext";
 import { useAuth } from "../../context/authContext";
 import toast from "react-hot-toast";
-import {AiOutlineShoppingCart,FiHeart,BiUser} from "../../utils/icons";
 const Navbar = () => {
     let navigate = useNavigate();
     const [searchActive, setSearchActive] = useState(false);
-    const [profileActive, setProfileActive] = useState(false);
     const location = useLocation();
     const { state, dispatch } = useStateContext();
     const { authState: { token }, authDispatch } = useAuth();
@@ -22,7 +20,6 @@ const Navbar = () => {
             id: toastId,
         });
         authDispatch({ type: authActions.LOGOUT })
-        setProfileActive(prev=>!prev);
         navigate("/");
 
     }
@@ -49,9 +46,7 @@ const Navbar = () => {
                        <span className="badge icon-badge">{state.wishlist.length}</span>
                      </span>
                </Link>
-               <Link to={token ? "/signin" : "/signin"}>
-                <div className="fas fa-user" id="profile-btn"></div>
-             </Link>
+               {token?<div className="fas fa-sign-out-alt" id="profile-btn" onClick={logoutHandler}></div>:<div className="fas fa-user" id="profile-btn" onClick={()=>navigate("/signin")}></div>}
              <form action="" className={`search-form ${searchActive && 'active'}`}>
                 <input type="search" id="search-box" placeholder="search here..."
                     value={state.searchProduct} onChange={(e) => dispatch({ type: SEARCH_PRODUCT, payload: e.target.value })} />

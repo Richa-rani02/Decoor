@@ -9,7 +9,6 @@ import { useNavigate } from "react-router-dom";
 
 
 const CartItem = ({ product }) => {
-    const [isActive, setIsActive] = useState(false);
     const { authState: { token } } = useAuth();
     const {dispatch,state:{wishlist} } = useStateContext(); 
     const discount = Math.round(((product.price - product.offprice) / product.price) * 100)
@@ -25,34 +24,25 @@ const CartItem = ({ product }) => {
     const removeCartHandler=()=>{
 
       removeFromCart(token,dispatch,product._id);
-      setIsActive(!isActive);
 
     }
 
     const moveWishlistHandler=()=>{
         addToWishlist(token,dispatch,product);
         removeFromCart(token,dispatch,product._id);
-        setIsActive(!isActive);
     }
-
-    useEffect(()=>{
-        isActive?document.body.style.overflow="hidden":document.body.style.overflow='unset'; 
-    },[isActive])
 
     return (
         <>
-            <div class="cartitem_wrap">
-                <div class="product_info">
-                    <div class="product_img">
+            <div className="cartitem_wrap">
+                <div className="product_info">
+                    <div className="product_img">
                         <img src={product.image} alt="ProductImage" width="170px" height="170px"/>
                     </div>
-                    <div class="product_data">
-                        <div class="description">
-                            <div class="product_title">
+                    <div className="product_data">
+                        <div className="description">
+                            <div className="product_title">
                             {product.title}
-                            <p class="product_sub_title">
-                                bounce back and responsiveness.Trusstic system technology.
-                            </p>
                             </div>
                         </div>
                         <div className="quantity">
@@ -61,16 +51,16 @@ const CartItem = ({ product }) => {
                             <input type="number" id="number" value={product.qty} />
                             <button className="btn-qty" id="increase" onClick={()=>updateCartHandler(INC_QTY)} >+</button>
                         </div>
-                        <div class="price">
-                            <div class="current_price">&#x20B9; {product.offprice}</div>
-                            <div class="normal_price">&#8377; {product.price}</div>
-                            <div class="discount">{discount}% OFF</div>
+                        <div className="price">
+                            <div className="current_price">&#x20B9; {product.offprice}</div>
+                            <div className="normal_price">&#8377; {product.price}</div>
+                            <div className="discount">{discount}% OFF</div>
                         </div>
                     </div>
                 </div>
-                <div class="product_btns">
-                    <div class="remove" onClick={() => removeCartHandler()}>REMOVE</div>
-                    <div class="whishlist" onClick={() => isInWishlist?navigate("/wishlist"):moveWishlistHandler()}>{isInWishlist?"IN WHISHLIST":"MOVE TO WHISHLIST"}</div>
+                <div className="product_btns">
+                    <div className="remove" onClick={() => removeCartHandler()}>REMOVE</div>
+                    <div className="whishlist" onClick={() => isInWishlist?navigate("/wishlist"):moveWishlistHandler()}>{isInWishlist?"IN WHISHLIST":"MOVE TO WHISHLIST"}</div>
                 </div>
                 
             </div>

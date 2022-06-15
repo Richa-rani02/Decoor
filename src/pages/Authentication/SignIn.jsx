@@ -10,12 +10,19 @@ const SignIn = () => {
     const [formValue, setFormValue] = useState({ ...initialFormValues });
 
     let navigate = useNavigate();
-    const { authDispatch } = useAuth();
-
+    const { authState: { error }, authDispatch } = useAuth();
+    console.log(error);
     const loginHandler = () => {
         loginToServer(formValue, authDispatch, navigate);
-        setFormValue(initialFormValues);
+        // setFormValue(initialFormValues);
     }
+    const errorMsg =
+        error === ""
+            ? ""
+            : error?.status === 500
+                ? "500 : Internal Server Error"
+                : error?.data?.errors[0];
+
     const loadTestCred = () => {
         setFormValue(testLogin);
 
@@ -28,16 +35,19 @@ const SignIn = () => {
         <div className="auth__page">
             <RouteSection path={"Login"} />
             <section className="auth">
-                
-                <form  className="auth-form top-gutter-lg" onSubmit={e => e.preventDefault()}>
-                <h3>login</h3>
-                <div className="auth-error">
-                        error
-                    </div>
+
+                <form className="auth-form top-gutter-lg" onSubmit={e => e.preventDefault()}>
+                    <h3>login</h3>
+                    {errorMsg ?
+                        <div className="auth-error">
+                            {errorMsg}
+                        </div> : null
+                    }
+
                     <InputBox labelName="Email" type="email" name="email" value={formValue.email} onChange={changeHandler} required />
                     <InputBox labelName="Password" type="password" name="password" value={formValue.password} onChange={changeHandler} required />
                     <p>Don't have an account <Link to="/signup" className="link-text-primary">create new</Link></p>
-                    <button  value="login" className="btn btn-solid-primary btn-lg btn-rounded-5 auth-btn" onClick={loginHandler}>Login</button>
+                    <button value="login" className="btn btn-solid-primary btn-lg btn-rounded-5 auth-btn" onClick={loginHandler}>Login</button>
                     <h4 className="top-gutter-sm test-btn" onClick={loadTestCred}>Load test credential</h4>
                 </form>
             </section>

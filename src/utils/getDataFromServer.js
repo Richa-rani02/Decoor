@@ -171,7 +171,7 @@ export const signupOnServer = async (userDetails, authDispatch, navigate) => {
         toast.error("Some error occured in signup. Try Again.", {
             id: toastId,
           });
-          dispatch({ type: "AUTH_ERROR", payload: error.response });
+          authDispatch({ type:authActions.AUTHERROR, payload: error.response });
     }
 }
 export const loginToServer = async (userDetails, authDispatch, navigate) => {
@@ -199,7 +199,7 @@ export const loginToServer = async (userDetails, authDispatch, navigate) => {
         toast.error("Some error occured in login. Try Again.", {
             id: toastId,
           });
-          dispatch({ type: authActions.AUTHERROR, payload: error.response });
+          authDispatch({ type:authActions.AUTHERROR, payload: error.response });
     }
 }
 

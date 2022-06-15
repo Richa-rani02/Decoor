@@ -21,7 +21,7 @@ const Home = () => {
             <section className="products section" id="products">
                 <h1 className="heading-1 center-text"> Best Selling</h1>
                 <div className="products-grid top-gutter-lg">
-                    {products.slice(0,4).map((item) => (
+                    {products.filter((product)=>product.tag==="bestseller").map((item) => (
                         <Product key={item._id} product={item} />
                     ))}
                 </div>

@@ -1,45 +1,42 @@
 import "./amountdetail.css";
-import { useStateContext } from "../../../context/stateContext";
-import { priceDetails } from "../../../utils/helper";
 import {Link} from "react-router-dom";
-const AmountDetails = () => {
-    const { state: { productInCart } } = useStateContext();
-    const { totalqty, price, discount } = priceDetails(productInCart);
+const AmountDetails = ({prices}) => {
+    const { totalqty, price, discount } = prices;
     return (
         <>
-             <div class="price_details">
-             <div class="item">
+             <div className="price_details">
+             <div className="item">
                     <p>Quantity :</p>
                     <p>{totalqty}</p>
                 </div>
-                <div class="item">
+                <div className="item">
                     <p>Bag Total :</p>
                     <p>Rs.{price}</p>
                 </div>
-                <div class="item">
+                <div className="item">
                     <p>Bag Discount :</p>
-                    <p class="green">Rs.-{discount}</p>
+                    <p className="green">Rs.-{discount}</p>
                 </div>
                 
-                <div class="item">
+                <div className="item">
                     <p>Order Total :</p>
                     <p>Rs.{price - discount}</p>
                 </div>
-                <div class="item">
+                <div className="item">
                     <p>Delivery Charges :</p>
-                    <p><span class="green">FREE</span></p>
+                    <p><span className="green">FREE</span></p>
                 </div>
-                {/* <div class="coupon">
+                {/* <div className="coupon">
                     <p>Coupon Discount :</p>
                     <p><a href="#">Apply Coupon</a></p>
                 </div> */}
-                <div class="total">
+                <div className="total">
                     <p>Total :</p>
                     <p>Rs.{price - discount}</p>
                 </div>
             </div>
-            <div class="checkout">
-            <Link to="/checkout" className="btn btn-solid-primary btn-lg checkout_btn">Checkout</Link>
+            <div className="checkout">
+            <button className="btn btn-solid-primary btn-lg checkout_btn">Checkout</button>
             </div>
         </>
     )

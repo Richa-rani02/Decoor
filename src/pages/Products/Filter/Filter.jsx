@@ -50,8 +50,8 @@ const Filter = () => {
                     value={state.filters.priceRange}
                     onChange={(e) => dispatch({ type: PRICE_RANGE, payload: e.target.value })}
                     type="range"
-                    min="100"
-                    max="1100"
+                    min="1000"
+                    max="5000"
                     list="marks"
                     step="200" />
                 <datalist id="marks"
@@ -61,12 +61,11 @@ const Filter = () => {
                         fontSize: "1rem"
                     }}
                 >
-                    <option value="100" label="100"></option>
-                    <option value="300" label="300"></option>
-                    <option value="500" label="500"></option>
-                    <option value="700" label="700"></option>
-                    <option value="900" label="900"></option>
-                    <option value="1100" label="1100"></option>
+                    <option value="1000" label="1000"></option>
+                    <option value="2000" label="2000"></option>
+                    <option value="3000" label="3000"></option>
+                    <option value="4000" label="4000"></option>
+                    <option value="5000" label="5000"></option>
                 </datalist>
 
             </div>

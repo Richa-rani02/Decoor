@@ -14,6 +14,7 @@ const Product = ({ product }) => {
         offprice,
         image,
         rating,
+        tag,
 
     } = product;
     let navigate = useNavigate();
@@ -46,17 +47,18 @@ const Product = ({ product }) => {
                     <img src={image} alt={title} className="img-responsive"/>
                 </div>
                 <span className="card-rating">{rating}★ | 5</span>
-                <span className="card-tag">Bestseller</span>
+                {tag?<span className="card-tag">Bestseller</span>:""}
+                
                 <div className="product-desc">
                     <span className="product-heading"><strong>{title}</strong><a onClick={() => wishlistHandler()}>
                         {
                             isInWishlist ? <i className={`wishlist-toogle fas fa-heart`}></i> : <i className="far fa-heart"></i>
                         }
                     </a></span>
-                    <div class="price">
-                            <div class="current_price">&#x20B9; {offprice} </div>
-                            <div class="normal_price">&#8377; {price}</div>
-                            <div class="discount">{discount}% OFF</div>
+                    <div className="price">
+                            <div className="current_price">&#x20B9; {offprice} </div>
+                            <div className="normal_price">&#8377; {price}</div>
+                            <div className="discount">{discount}% OFF</div>
                         </div>
                 </div>
                 <div className="product-btn-container">
