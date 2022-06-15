@@ -21,7 +21,7 @@
 }
 
 .filter__wrap {
-  flex-basis: 32rem;
+  flex-basis: 30rem;
   padding: var(--spacing-3) var(--spacing-2);
   height: 100%;
   margin: 2px;
