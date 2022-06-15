@@ -1,11 +1,12 @@
 .products-grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    gap:var(--spacing-1-5);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 5rem;
+    gap:var(--spacing-2);
     width: 100%;
     cursor: pointer;
-    align-items: center;
-    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .alert-container{
@@ -16,8 +17,3 @@
   .right-side{
   width: auto;
    }
-.alert{
-    z-index: 1000;
-    position: absolute;
-}
-

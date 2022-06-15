@@ -1,8 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap');
 
 html, body {
     height: 100%;
@@ -18,7 +15,7 @@ html {
 body {
     font-size: 1.6rem;
     background-color: var(--white);
-    font-family: 'Poppins', sans-serif;
+    font-family: "DM Sans", sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -28,9 +25,32 @@ body {
 :root {
 
     /* ******************colors****************** */
+    
+    --black-1:hsl(0, 0%, 100%);
+    --black-2:hsl(0, 0%, 99%);
+    --black-3:hsl(0, 0%, 80%);
+    --black-4:hsl(0, 0%, 35%);
+    --black-5:hsl(0, 0%, 25%);
+    --black-6:hsl(0, 0%, 15%);
+    --black-7:hsl(0, 0%, 10%);
+    --black-8:hsl(0, 0%, 0%);
+    --brand-color-shade-1:hsl(229, 44%, 96%);
+    --brand-color-shade-2:hsl(229, 44%, 92%);
+    --brand-color-shade-3:hsl(231, 46%, 86%);
+    --brand-color-shade-4:hsl(231, 45%, 70%);
+    --brand-color-shade-5:hsl(231, 45%, 60%);
+    --brand-color-shade-6:hsl(231, 45%, 50%);
 
-    --primary-color: #244d4d;
-    --secondary-color: #316868;
+
+
+
+
+
+
+
+
+    --primary-color: #000000;
+    --secondary-color: #433F3E;
     --secondary-light: #f90;
     --text-primary-color: #1A202C;
     --primary-light: #5F7589;
@@ -85,7 +105,14 @@ body {
     --z-index-3: 3;
 
 }
-
+.img-responsive{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.green{
+    color: var(--card-rating);
+}
 .bottom-gutter-sm {
     margin-bottom: 1rem;
 }
@@ -211,10 +238,13 @@ hr {
     .header {
         padding: var(--spacing-2);
     }
-
+/* 
     section {
         padding: var(--spacing-2);
-    }
+    } */
+    .section {
+    padding: var(--spacing-2) 9%;
+}
 
 }
 

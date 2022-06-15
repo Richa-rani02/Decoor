@@ -14,6 +14,7 @@ const Product = ({ product }) => {
         offprice,
         image,
         rating,
+        tag,
 
     } = product;
     let navigate = useNavigate();
@@ -43,19 +44,22 @@ const Product = ({ product }) => {
         <>
             <div className="product-box">
                 <div className="image">
-                    <img src={image} alt={title} />
+                    <img src={image} alt={title} className="img-responsive"/>
                 </div>
                 <span className="card-rating">{rating}★ | 5</span>
+                {tag?<span className="card-tag">Bestseller</span>:""}
+                
                 <div className="product-desc">
                     <span className="product-heading"><strong>{title}</strong><a onClick={() => wishlistHandler()}>
                         {
                             isInWishlist ? <i className={`wishlist-toogle fas fa-heart`}></i> : <i className="far fa-heart"></i>
                         }
                     </a></span>
-                    <div className="price">&#x20B9;{offprice}  <span id="price-off">&#x20B9;{price}
-                    </span> <span className="highlight-text">({discount}%
-                        OFF)</span>
-                    </div>
+                    <div className="price">
+                            <div className="current_price">&#x20B9; {offprice} </div>
+                            <div className="normal_price">&#8377; {price}</div>
+                            <div className="discount">{discount}% OFF</div>
+                        </div>
                 </div>
                 <div className="product-btn-container">
                     <button className="btn btn-solid-primary btn-lg flex-display" onClick={() => CartHandler()}>

@@ -14,7 +14,7 @@ const ProductList=({setActive})=>{
         <>
         <div className="alert-container bottom-gutter-sm">
           <div className="left-side">
-          <h3 className="">Showing All Products({filteredProducts.length}) </h3>
+          <h3 className="">Showing All Products({filteredProducts.length})</h3>
           </div>
           <div className="right-side auto-margin">
           <div className="filter__responsive" onClick={()=>setActive(prevstate=> !prevstate)}>

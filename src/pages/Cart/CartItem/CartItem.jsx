@@ -9,7 +9,6 @@ import { useNavigate } from "react-router-dom";
 
 
 const CartItem = ({ product }) => {
-    const [isActive, setIsActive] = useState(false);
     const { authState: { token } } = useAuth();
     const {dispatch,state:{wishlist} } = useStateContext(); 
     const discount = Math.round(((product.price - product.offprice) / product.price) * 100)
@@ -25,61 +24,48 @@ const CartItem = ({ product }) => {
     const removeCartHandler=()=>{
 
       removeFromCart(token,dispatch,product._id);
-      setIsActive(!isActive);
 
     }
 
     const moveWishlistHandler=()=>{
         addToWishlist(token,dispatch,product);
         removeFromCart(token,dispatch,product._id);
-        setIsActive(!isActive);
     }
-
-    useEffect(()=>{
-        isActive?document.body.style.overflow="hidden":document.body.style.overflow='unset'; 
-    },[isActive])
 
     return (
         <>
-            <div className="cart-item">
-                <a className="badge-icon"> <i className="far fa-trash-alt fa-2x" onClick={() => setIsActive(!isActive)}></i></a>
-                <img src={product.image} alt={product.title} />
-
-                <div className="cart-content">
-                    <div className="cart-heading">
-                        <h3>{product.title}</h3>
+            <div className="cartitem_wrap">
+                <div className="product_info">
+                    <div className="product_img">
+                        <img src={product.image} alt="ProductImage" width="170px" height="170px"/>
                     </div>
-                    <div className="cart-desc">
-                        <div className="product-price">
-                            <div className="price">&#x20B9; {product.offprice}</div>
-                            <div className="previous-price">&#8377; {product.price}</div>
+                    <div className="product_data">
+                        <div className="description">
+                            <div className="product_title">
+                            {product.title}
+                            </div>
                         </div>
-                        <div className="price-off">({discount}%
-                            OFF)</div>
                         <div className="quantity">
                             <button className="btn-qty" id="decrease" onClick={()=>product.qty>1 && updateCartHandler(DEC_QTY)}
                             disabled={product.qty>1?false:true} >-</button>
                             <input type="number" id="number" value={product.qty} />
                             <button className="btn-qty" id="increase" onClick={()=>updateCartHandler(INC_QTY)} >+</button>
                         </div>
+                        <div className="price">
+                            <div className="current_price">&#x20B9; {product.offprice}</div>
+                            <div className="normal_price">&#8377; {product.price}</div>
+                            <div className="discount">{discount}% OFF</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div className={`modal-container ${isActive && 'modal-active'} `}>
-                <div className="popup">
-                    <div className="content flex-col">
-                        <h4 className="large-text bottom-gutter-sm ">Delete</h4>
-                        <p className="sub-p medium-text"> Are you sure you want to move this item from cart?</p>
-                    </div>
-                    <div className="modal-btn">
-                        <button className="btn btn-outline-primary btn-sm btn-rounded-5" id="cancel" onClick={() => isInWishlist?navigate("/wishlist"):moveWishlistHandler()} >
-                            {isInWishlist?"In wishlist":"Move to wishlist"}</button>
-                        <button href="#" className="btn btn-solid-primary btn-sm btn-rounded-5 center-text" id="confirm" onClick={() => removeCartHandler()}>Delete</button>
-                    </div>
+                <div className="product_btns">
+                    <div className="remove" onClick={() => removeCartHandler()}>REMOVE</div>
+                    <div className="whishlist" onClick={() => isInWishlist?navigate("/wishlist"):moveWishlistHandler()}>{isInWishlist?"IN WHISHLIST":"MOVE TO WHISHLIST"}</div>
                 </div>
+                
             </div>
         </>
-        //
+       
     )
 }
 export { CartItem };

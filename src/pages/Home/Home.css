@@ -1,12 +1,8 @@
-
-section {
-    padding: var(--spacing-2) 9%;
+.main-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 }
-
-.products-grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    gap:var(--spacing-1-5);
-    width: 100%;
-    cursor: pointer;
+.section {
+    padding: var(--spacing-2) 9%;
 }

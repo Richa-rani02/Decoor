@@ -1,36 +1,53 @@
 import "./Cart.css";
-import {Checkout} from "./Checkout/Checkout";
+import { AmountDetails } from "./AmountDetails/AmountDetails";
 import { CartItem } from "./CartItem/CartItem";
 import { useLocation } from "react-router-dom";
-import{EmptyPage} from "../index";
+import { EmptyPage } from "../index";
+import { RouteSection } from "../../components";
+import { priceDetails } from "../../utils/helper";
 import { useStateContext } from "../../context/stateContext";
 
 const Cart = () => {
-    const {state:{ productInCart}}=useStateContext();
-    const iscartHasItem=productInCart.length>0;
-    let location=useLocation();
-
+    const { state: { productInCart } } = useStateContext();
+    let location = useLocation();
+    const { totalqty, price, discount } = priceDetails(productInCart);
+    const prices={ totalqty, price, discount };
     return (
         <>
-        {productInCart.length>0?
-        <>
-            <h3 className="heading-3 center-text top-gutter-md">MY CART{iscartHasItem && `(${productInCart.length})`}</h3>
-            <section className="cart-page" id="cart-page">
-            <div className="cart-container">
-                {productInCart.map((item)=>(
+            <RouteSection path={"Cart"} />
+            {productInCart.length > 0 ?
+                <>
+                    <section className="cart-wrapper">
+                        <article className="wrapper-content">
+                            <div className="header_title">
+                                <div className="cart-title">
+                                    MY SHOPPING CART :
+                                </div>
+                                <div className="amount">
+                                    <b>({productInCart.length}) ITEMS</b>
+                                </div>
+
+                            </div>
+                            {productInCart.map((item)=>(
                     <CartItem key={item._id} product={item}/>
                 ))}
-                </div>
-                {iscartHasItem &&
-                <div className="checkout-container">
-                <Checkout/>
-                </div>
-                }
-            </section>
-            </>
-            
-            :
-            <EmptyPage path={location.pathname}/>
+                        </article>
+                        <article className="wrapper-amount">
+                        <div className="header_title">
+                                <div className="cart-title">
+                                TOTAL PRICE DETAILS:
+                                </div>
+                                <div className="amount">
+                                <b>Rs.{price - discount}</b> 
+                                </div>
+                            </div>
+                            <AmountDetails prices={prices}/>
+                        </article>
+                    </section>
+                </>
+
+                :
+                <EmptyPage path={location.pathname} />
             }
         </>
     )

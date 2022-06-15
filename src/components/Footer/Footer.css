@@ -1,6 +1,6 @@
 .footer {
   width: 100%;
-  background-color: var(--nav-bg);
+  background-color:var(--brand-color-shade-2);
   position: relative;
   bottom: 0;
 }
@@ -51,12 +51,6 @@
 }
 
 .footer-logo {
-  width: 250px;
-  height: 250px;
-}
-
-.icon-responsive {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+ width: 12rem;
+ height: 10rem;
 }
