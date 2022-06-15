@@ -1,10 +1,10 @@
 <div align="center">
 
-<img alt="logo" src="public/Assets/decorkartlogo.png" width="150px" height="150px" />
+<img alt="logo" src="https://res.cloudinary.com/dgomw715r/image/upload/v1655122821/ProjectImages/ecomm2_r6nyji.png" width="150px" height="150px" />
 
-## DecorKart
+## Decoor
 
-This application can be  accessed using the link  [DecorKart](https://decor-kart.netlify.app/).
+This application can be  accessed using the link  [Decoor](https://decoor.netlify.app/).
 
 </div>
 
@@ -19,7 +19,7 @@ This application can be  accessed using the link  [DecorKart](https://decor-kart
 
 ##  About
 
-DecorKart is an e-commerce platform for the Home decor products. You can buy products of your favourite category.
+Decoor is an e-commerce platform for the Home decor products. You can buy products of your favourite category.
 
 ---
 
