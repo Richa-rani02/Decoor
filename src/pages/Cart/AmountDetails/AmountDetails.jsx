@@ -36,7 +36,7 @@ const AmountDetails = ({prices}) => {
                 </div>
             </div>
             <div className="checkout">
-            <button className="btn btn-solid-primary btn-lg checkout_btn">Checkout</button>
+            <Link to ="/checkout" className="btn btn-solid-primary btn-lg checkout_btn">Checkout</Link>
             </div>
         </>
     )

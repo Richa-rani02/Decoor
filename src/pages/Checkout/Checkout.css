@@ -11,7 +11,7 @@ padding: 10px;
 .add-address{
     padding:10px;
     margin-top: 1.5rem;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     color: white;
 }
 .address-list{
@@ -22,10 +22,14 @@ padding: 10px;
 .order-container{
     width:40%;
     padding: 10px;
+   
+}
+.empty-order{
+    width:40%;
+    text-align: center;
 }
 .order-container .order-items{
-    border-radius: 5px;
-    border:2px solid var(--light-grey);
+    background-color: var(--black-2);
     text-align: center;
     padding: 10px;
     margin-top: 1.5rem;
@@ -38,6 +42,7 @@ padding: 10px;
 .order-items p{
     font-size: 1.8rem;
     color: var(--primary-color);
+    border-bottom: 1px solid var(--black-3);
 }
 .items span{
     font-size: 1.5rem;
@@ -45,11 +50,18 @@ padding: 10px;
 .order-btn{
     width: 100%;
 }
+.discount-message{
+    border-top: 1px solid var(--black-3);
+}
 @media (max-width:594px) {
 .address-container{
     width: 90%;
 }
 .order-container{
     width: 90%;
+}
+.empty-order{
+    width: 90%;
+    height: fit-content;
 }
 }

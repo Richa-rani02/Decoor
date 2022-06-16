@@ -8,3 +8,4 @@ export {Cart} from "./Cart/Cart";
 export {EmptyPage} from "./Error/EmptyPage";
 export {ErrorPage} from "./Error/ErrorPage";
 export {Checkout} from "./Checkout/Checkout";
+export {OrderDetails} from "./orderDetails/OrderDetails";

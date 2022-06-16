@@ -8,7 +8,7 @@
     display: block;
     padding: 1rem 3rem 1rem 6rem;
     background:white;
-    border:1px solid grey;
+    border:1px solid var(--black-3);
     border-radius: 6px;
     cursor: pointer;
     font-size: 1.6rem;
@@ -24,9 +24,9 @@ margin-top: 5px;
 .radio-item label p span{
     padding:4px;
     margin-left: 10px;
-    background-color: var(--light-grey);
+    background-color: var(--black-3);
     border-radius: 3px;
-    color: white;
+    color: var(--black-1);
     font-size: 1.4rem;
 }
 .radio-item label:after,
@@ -39,12 +39,12 @@ margin-top: 5px;
 .radio-item label:after{
     height: 2rem;
     width: 2rem;
-    border:2px solid var(--secondary-color);
+    border:2px solid var(--brand-color-shade-5);
     left: 2rem;
     top: calc(50% - 12px);
 }
 .radio-item label:before{
-    background: var(--secondary-color);
+    background: var(--brand-color-shade-5);
     height: 10px;
     width: 10px;
     left: 2.5rem;
@@ -55,7 +55,7 @@ margin-top: 5px;
     visibility: hidden;
 }
 .radio-item [type="radio"]:checked ~ label{
-    border:2px solid var(--secondary-color);
+    border:2px solid var(--brand-color-shade-4);
 }
 
 .radio-item [type="radio"]:checked ~ label:before{
