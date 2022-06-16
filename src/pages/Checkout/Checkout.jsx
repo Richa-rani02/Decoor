@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { getAddress } from "../../utils/getDataFromServer";
 import { useAuth } from "../../context/authContext";
 import { priceDetails } from "../../utils/helper";
+import { RouteSection } from "../../components";
 export const Checkout = () => {
   const [addressModalActive, setAddressModalActive] = useState(false);
   const { state: { address, productInCart }, dispatch } = useStateContext();
@@ -16,7 +17,7 @@ export const Checkout = () => {
   }, [])
   return (
     <>
-      <h3 className="heading-3 center-text top-gutter-md">CHECKOUT</h3>
+      <RouteSection path={"Checkout"}/>
       <section className="order-page">
         <article className="address-container">
           <h4>Deliver to</h4>
