@@ -18,7 +18,8 @@ const StateProvider = ({ children }) => {
             filterByRating: "",
             priceRange: "",
             productCategory: [],
-        }
+        },
+        orderDetails:{},
     }
     const [state, dispatch] = useReducer(stateReducer, initialState);
     useEffect(() => {

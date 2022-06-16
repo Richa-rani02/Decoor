@@ -1,4 +1,4 @@
-import { LOAD_CATEGORY, IS_LOADING, ERROR, LOAD_PRODUCTS, FILTER_BY_CATEGORY,ADD_TO_WISHLIST,REMOVE_FROM_WISHLIST, SORT_BY_PRICE, SEARCH_PRODUCT, FILTER_BY_RATING, PRICE_RANGE, CLEAR_ALL,ADD_TO_CART,REMOVE_FROM_CART,UPDATE_QTY, ADDRESS } from "../utils/constants";
+import { LOAD_CATEGORY, IS_LOADING, ERROR, LOAD_PRODUCTS,ADD_ORDER, FILTER_BY_CATEGORY,ADD_TO_WISHLIST,REMOVE_FROM_WISHLIST, SORT_BY_PRICE, SEARCH_PRODUCT, FILTER_BY_RATING, PRICE_RANGE, CLEAR_ALL,ADD_TO_CART,REMOVE_FROM_CART,UPDATE_QTY, ADDRESS } from "../utils/constants";
 export const stateReducer = (state, action) => {
     switch (action.type) {
         case IS_LOADING:
@@ -105,6 +105,11 @@ export const stateReducer = (state, action) => {
                 }
 
             };
+            case ADD_ORDER:
+                return{
+                    ...state,
+                    orderDetails:{...state.orderDetails,order:action.payload}
+                }
         default:
             throw newError("Undefined Action type");
 

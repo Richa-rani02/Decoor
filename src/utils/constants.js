@@ -32,4 +32,4 @@ export const DEC_QTY="DEC_QTY";
 
 // address
 export const ADDRESS="ADDRESS";
-
+export const ADD_ORDER="ADD_ORDER";
