@@ -62,11 +62,9 @@ const Product = ({ product }) => {
                         </div>
                 </div>
                 <div className="product-btn-container">
-                    <button className="btn btn-solid-primary btn-lg flex-display" onClick={() => CartHandler()}>
-                        {isInCart ? <span>Go to Cart</span> : <span>Add to Cart</span>}
-
-                        <AiOutlineShopping className="add-btn-icon" />
-                    </button>
+                    {
+                        isInCart?<button className="btn btn-outline-primary btn-lg flex-display" onClick={() => CartHandler()}>Go to Cart  <AiOutlineShopping className="add-btn-icon" /></button>:<button className="btn btn-solid-primary btn-lg flex-display" onClick={() => CartHandler()}>Add to Cart  <AiOutlineShopping className="add-btn-icon" /></button>
+                    }
                 </div>
             </div>
         </>
