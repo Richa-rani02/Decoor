@@ -14,10 +14,6 @@ const getoken=localStorage.getItem('sessiontoken')
     
 
 const [authState,authDispatch]=useReducer(authReducer,authInitialState); 
-
-
-
-
     return (
         <AuthContext.Provider value={{authState,authDispatch}}>
             {children}

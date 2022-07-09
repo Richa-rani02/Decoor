@@ -14,8 +14,9 @@ import toast from "react-hot-toast";
 export const Checkout = () => {
   const [addressModalActive, setAddressModalActive] = useState(false);
   const { state: { address, productInCart, orderDetails }, dispatch } = useStateContext();
-  const { authState: { token } } = useAuth();
+  const { authState: { token,userDetails } } = useAuth();
   const navigate = useNavigate();
+  const {name,email}=userDetails || "";
   const [deliveryAddress, setDeliveryAddress] = useState(null);
   const { price, discount } = priceDetails(productInCart);
   useEffect(() => {
@@ -23,20 +24,64 @@ export const Checkout = () => {
 
   }, [])
 
-  const placeOrder = () => {
-    if (deliveryAddress) {
-      dispatch({
-        type: ADD_ORDER, payload: {
-            id: uuid(),
+  const razorpayHandler=()=>{
+    deliveryAddress?
+       displayRazorPay()
+       :toast.error("Pick delivery address!");
+  }
+  const loadScript = async (url) => {
+    return new Promise((resolve) => {
+      const script = document.createElement('script');
+      script.src = url;
+
+      script.onload = () => {
+        resolve(true);
+      };
+
+      script.onerror = () => {
+        resolve(false);
+      };
+      document.body.appendChild(script);
+    });
+  };
+  const displayRazorPay=async()=>{
+    const res=await loadScript(
+      'https://checkout.razorpay.com/v1/checkout.js'
+    );
+    if (!res) {
+      toast.error('Razorpay SDK failed to load, check you connection');
+      return;
+    }
+    const options = {
+      key: 'rzp_test_XKtqLi90LtQ8nB',
+      amount: price - discount,
+      currency: 'INR',
+      name: 'Decoor',
+      description: 'Thank you for shopping with us',
+      image:
+        'https://res.cloudinary.com/dgomw715r/image/upload/v1655122821/ProjectImages/ecomm2_r6nyji.png',
+      handler: function (response) {
+            dispatch({
+            type: ADD_ORDER, payload: {
+            id: response.razorpay_payment_id,
             orderItem: productInCart,
             totalAmount: price - discount,
             orderAddress: deliveryAddress
         }
       })
-      navigate("/orderDetails")
-    } else {
-      toast.error("Pick delivery address!");
-    }
+      navigate("/orderDetails");
+      },
+      prefill: {
+        contact: '9999999999',
+        name:name,
+        email:email
+      },
+      theme: {
+        color: '#8f9ad6',
+      },
+    };
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
   }
   return (
     <>
@@ -87,7 +132,7 @@ export const Checkout = () => {
               <p className="discount-message">
                 you will save Rs.{discount}
               </p>
-              <button className="order-btn top-gutter-md btn btn-solid-primary btn-lg" onClick={placeOrder}>Place Order</button>
+              <button className="order-btn top-gutter-md btn btn-solid-primary btn-lg" onClick={razorpayHandler}>Place Order</button>
             </div>
           </article>
           : <article className="empty-order">
