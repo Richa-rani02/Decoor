@@ -11,10 +11,12 @@ const SignIn = () => {
 
     let navigate = useNavigate();
     const { authState: { error }, authDispatch } = useAuth();
-    console.log(error);
+    const {email,password}=formValue;
     const loginHandler = () => {
-        loginToServer(formValue, authDispatch, navigate);
-        // setFormValue(initialFormValues);
+        if(email && password!==""){
+            loginToServer(formValue, authDispatch, navigate);
+        }
+        setFormValue(initialFormValues);
     }
     const errorMsg =
         error === ""
