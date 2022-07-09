@@ -98,7 +98,6 @@ export const addToCart = async (token, dispatch, product) => {
 }
 
 export const removeFromCart = async (token, dispatch, id) => {
-    const toastId=toast.loading("Deleting item to cart...")
     try {
         const response = await axios.delete(`api/user/cart/${id}`, {
             headers: {
@@ -106,16 +105,11 @@ export const removeFromCart = async (token, dispatch, id) => {
             }
         });
         if (response.status === 200 || response.status == 201) {
-            toast.success("Item deleted from cart!",{
-                id:toastId
-            })
             dispatch({ type: REMOVE_FROM_CART, payload: response.data.cart })
         }
     }
     catch (error) {
-        toast.error("Some error occured :( .Try again!",{
-            id:toastId,
-        });
+        toast.error("Some error occured :( .Try again!");
         dispatch({ type: ERROR, payload: error.response });
     }
 }

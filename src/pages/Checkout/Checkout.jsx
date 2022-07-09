@@ -10,6 +10,7 @@ import { getAddress } from "../../utils/getDataFromServer";
 import { useAuth } from "../../context/authContext";
 import { priceDetails } from "../../utils/helper";
 import { RouteSection } from "../../components";
+import { removeFromCart } from "../../utils/getDataFromServer";
 import toast from "react-hot-toast";
 export const Checkout = () => {
   const [addressModalActive, setAddressModalActive] = useState(false);
@@ -24,6 +25,11 @@ export const Checkout = () => {
 
   }, [])
 
+const clearAllCart=()=>{
+productInCart.forEach(element => {
+  removeFromCart(token,dispatch,element._id);
+});
+  }
   const razorpayHandler=()=>{
     deliveryAddress?
        displayRazorPay()
@@ -54,7 +60,7 @@ export const Checkout = () => {
     }
     const options = {
       key: 'rzp_test_XKtqLi90LtQ8nB',
-      amount: price - discount,
+      amount:(price - discount) *100,
       currency: 'INR',
       name: 'Decoor',
       description: 'Thank you for shopping with us',
@@ -70,6 +76,7 @@ export const Checkout = () => {
         }
       })
       navigate("/orderDetails");
+      clearAllCart();
       },
       prefill: {
         contact: '9999999999',
